@@ -36,8 +36,9 @@ from elasticsearch import helpers, logger as elastic_logger
 from parse import parse
 from gdal import ogr
 
-from msc_pygeoapi.env import (MSC_PYGEOAPI_ES_TIMEOUT, MSC_PYGEOAPI_ES_URL,
-                              MSC_PYGEOAPI_ES_AUTH)
+from msc_pygeoapi.env import (
+    MSC_PYGEOAPI_ES_TIMEOUT, MSC_PYGEOAPI_ES_URL,
+    MSC_PYGEOAPI_ES_AUTH)
 from msc_pygeoapi.loader.base import BaseLoader
 from msc_pygeoapi.util import get_es, json_pretty_print
 
@@ -45,7 +46,7 @@ LOGGER = logging.getLogger(__name__)
 elastic_logger.setLevel(logging.WARNING)
 
 # index settings
-INDEX_NAME = 'forecast_polygons_{}'
+INDEX_NAME = 'forecast_polygons_{}_{}'
 
 FILE_PROPERTIES = {
     'water': {
@@ -76,13 +77,17 @@ FILE_PROPERTIES = {
         'NAME': {
             'type': 'text',
             'fields': {
-                'raw': {'type': 'keyword'}
+                'raw': {'type': 'keyword'},
+                'normalize': {'type': 'keyword',
+                              'normalizer': 'name_normalizer'}
             }
         },
         'NOM': {
             'type': 'text',
             'fields': {
-                'raw': {'type': 'keyword'}
+                'raw': {'type': 'keyword'},
+                'normalize': {'type': 'keyword',
+                              'normalizer': 'name_normalizer'}
             }
         },
         'PERIM_KM': {
@@ -174,13 +179,17 @@ FILE_PROPERTIES = {
         'NAME': {
             'type': 'text',
             'fields': {
-                'raw': {'type': 'keyword'}
+                'raw': {'type': 'keyword'},
+                'normalize': {'type': 'keyword',
+                              'normalizer': 'name_normalizer'}
             }
         },
         'NOM': {
             'type': 'text',
             'fields': {
-                'raw': {'type': 'keyword'}
+                'raw': {'type': 'keyword'},
+                'normalize': {'type': 'keyword',
+                              'normalizer': 'name_normalizer'}
             }
         },
         'PERIM_KM': {
@@ -249,7 +258,18 @@ FILE_PROPERTIES = {
 SETTINGS = {
     'settings': {
         'number_of_shards': 1,
-        'number_of_replicas': 0
+        'number_of_replicas': 0,
+        'analysis': {
+            'normalizer': {
+                'name_normalizer': {
+                    'type': 'custom',
+                    'filter': [
+                        'lowercase',
+                        'asciifolding'
+                    ],
+                }
+            }
+        }
     },
     'mappings': {
         'properties': {
@@ -263,13 +283,19 @@ SETTINGS = {
     }
 }
 
-INDICES = [INDEX_NAME.format(weather_var) for weather_var in FILE_PROPERTIES]
+INDICES = [
+    INDEX_NAME.format(forecast_zone, detail_level)
+    for forecast_zone in FILE_PROPERTIES
+    for detail_level in ['coarse', 'detail']
+]
 
 SHAPEFILES_TO_LOAD = {
     'MSC_Geography_Pkg_V6_3_0_Water_Unproj':
-        ['water_MarStdZone_detail_unproj.shp'],
+        ['water_MarStdZone_coarse_unproj.shp',
+         'water_MarStdZone_detail_unproj.shp'],
     'MSC_Geography_Pkg_V6_3_0_Land_Unproj':
-        ['land_CLCBaseZone_detail_unproj.shp']
+        ['land_CLCBaseZone_coarse_unproj.shp',
+         'land_CLCBaseZone_detail_unproj.shp']
 }
 
 
@@ -287,16 +313,17 @@ class ForecastPolygonsLoader(BaseLoader):
         self.zone = None
         self.items = []
 
-        # create storm variable indices if it don't exist
-        for item in FILE_PROPERTIES:
-            if not self.ES.indices.exists(INDEX_NAME.format(item)):
-
+        # create forecast polygon indices if they don't exist
+        for index in INDICES:
+            zone = index.split('_')[2]
+            if not self.ES.indices.exists(index):
                 SETTINGS['mappings']['properties'][
-                    'properties']['properties'] = FILE_PROPERTIES[item]
+                    'properties']['properties'] = FILE_PROPERTIES[zone]
 
-                self.ES.indices.create(index=INDEX_NAME.format(
-                    item), body=SETTINGS,
-                    request_timeout=MSC_PYGEOAPI_ES_TIMEOUT)
+                self.ES.indices.create(index=index,
+                                       body=SETTINGS,
+                                       request_timeout=MSC_PYGEOAPI_ES_TIMEOUT
+                                       )
 
     def parse_filename(self):
         """
@@ -317,9 +344,9 @@ class ForecastPolygonsLoader(BaseLoader):
 
     def generate_geojson_features(self, shapefile_name):
         """
-        Generates and yields a series of meteocode geodata polygons,
+        Generates and yields a series of meteocode geodata features,
         one for each feature in <self.filepath/self.filepath.stem/
-        shapefile_name>. Observations are returned as ElasticSearch bulk API
+        shapefile_name>. Features are returned as ElasticSearch bulk API
         upsert actions, with documents in GeoJSON to match the ElasticSearch
         index mappings.
         :returns: Generator of ElasticSearch actions to upsert the forecast
@@ -335,17 +362,15 @@ class ForecastPolygonsLoader(BaseLoader):
                                                 options=['RFC7946=YES'])
             feature_json['properties']['version'] = self.version
 
-            # set id to appropriate field depending if land/water polygon
-            if self.zone == 'Water':
-                _id = feature_json['properties']['F_MARSTDZA']
-            elif self.zone == 'Land':
-                _id = feature_json['properties']['F_CLCBZA']
+            _id = feature_json['properties']['FEATURE_ID']
 
             self.items.append(feature_json)
 
             action = {
                 '_id': '{}'.format(_id),
-                '_index': INDEX_NAME.format(self.zone.lower()),
+                '_index': INDEX_NAME.format(self.zone.lower(),
+                                            shapefile_name.split('_')[2]
+                                            ),
                 '_op_type': 'update',
                 'doc': feature_json,
                 'doc_as_upsert': True
@@ -394,7 +419,8 @@ class ForecastPolygonsLoader(BaseLoader):
                         'inserts, {} updates, {} no-ops, {} rejects)'
                         .format(total, self.zone, inserts, updates,
                                 noops, fails))
-            return True
+
+        return True
 
 
 @click.group()
@@ -424,7 +450,7 @@ def add(ctx, file_, directory):
         files_to_process = [file_]
     elif directory is not None:
         for root, dirs, files in os.walk(directory):
-            for f in [file for file in files if file.endswith('.shp')]:
+            for f in [file for file in files if file.endswith('.zip')]:
                 files_to_process.append(os.path.join(root, f))
         files_to_process.sort(key=os.path.getmtime)
 
@@ -436,7 +462,7 @@ def add(ctx, file_, directory):
         loader = ForecastPolygonsLoader(plugin_def)
         result = loader.load_data(file_to_process)
         if result:
-            click.echo('File properties: {}'.format(
+            click.echo('GeoJSON features generated: {}'.format(
                 json_pretty_print(loader.items)))
 
 
@@ -444,7 +470,7 @@ def add(ctx, file_, directory):
 @click.pass_context
 @click.option('--index_name', '-i',
               type=click.Choice(INDICES),
-              help='msc-geousage elasticsearch index name to delete')
+              help='msc-pygeoapi forecast polygon index name to delete')
 def delete_index(ctx, index_name):
     """
     Delete a particular ES index with a given name as argument or all if no
@@ -460,9 +486,10 @@ def delete_index(ctx, index_name):
             return True
     else:
         if click.confirm(
-            'Are you sure you want to delete {} forecast polygon'
-            ' indices ({})?'.format(click.style('ALL', fg='red'),
-                                    click.style(", ".join(INDICES), fg='red')),
+                'Are you sure you want to delete {} forecast polygon'
+                ' indices ({})?'.format(click.style('ALL', fg='red'),
+                                        click.style(", ".join(INDICES),
+                                                    fg='red')),
                 abort=True):
             es.indices.delete(index=",".join(INDICES))
             return True

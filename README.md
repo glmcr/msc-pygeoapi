@@ -6,19 +6,6 @@ MSC GeoMet pygeoapi server configuration and utilities
 
 ## Installation
 
-The easiest way to install msc-pygeoapi is via the Python [pip](https://pip.pypa.io/en/stable/)
-utility:
-
-```bash
-pip install msc-pygeoapi
-```
-
-Installing via apt:
-
-```bash
-apt-get install msc-pygeoapi
-```
-
 ### Requirements
 - Python 3.  Works with Python 2.7
 - [virtualenv](https://virtualenv.pypa.io/)
@@ -35,7 +22,7 @@ Dependencies of note:
 ### Installing msc-pygeoapi
 ```bash
 # setup virtualenv
-virtualenv --system-site-packages -p python3 msc-pygeoapi
+python3 -m venv --system-site-packages msc-pygeoapi
 cd msc-pygeoapi
 source bin/activate
 
@@ -97,29 +84,34 @@ http://localhost/features/collections/hydrometric-stations/items?STATUS_EN=Activ
 ```bash
 pip install -r requirements-oracle.txt
 
-msc-pygeoapi data load hydat <rest of flags/parameters>
-msc-pygeoapi data load climate-archive <rest of flags/parameters>
-msc-pygeoapi data load ahccd_cmip5 <rest of flags/parameters>
+# view all data loaders available
+msc-pygeoapi data
+
+# examples for some loaders
+msc-pygeoapi data hydat <rest of flags/parameters>
+msc-pygeoapi data climate-archive <rest of flags/parameters>
+msc-pygeoapi data ahccd_cmip5 <rest of flags/parameters>
+msc-pygeoapi data marine-weather add -d <path_to_directory of XML files>
 
 # bulletins - delete index
-msc-pygeoapi data load bulletins delete-index  # use --yes flag to bypass prompt
+msc-pygeoapi data bulletins delete-index  # use --yes flag to bypass prompt
 
 # realtime - standard workflow
-msc-pygeoapi data load hydrometric-realtime cache-stations  # download stations list to $MSC_PYGEOAPI_CACHEDIR location
+msc-pygeoapi data hydrometric-realtime cache-stations  # download stations list to $MSC_PYGEOAPI_CACHEDIR location
 
 sr_subscribe start deploy/default/sarracenia/hydrometric_realtime.conf  # begin realtime update process
 
-msc-pygeoapi data load hydrometric-realtime clean-records --days 30  # use --yes flag to bypass prompt (usually in crontab)
+msc-pygeoapi data hydrometric-realtime clean-records --days 30  # use --yes flag to bypass prompt (usually in crontab)
 ```
 
 ## Running processes
 ```bash
 
 # run the CCCS Raster drill process (returns GeoJSON by default)
-msc-pygeoapi process execute cccs raster-drill --y=45 --x=-75 --layer=CMIP5.SFCWIND.HISTO.WINTER.ABS_PCTL95
+msc-pygeoapi process cccs execute raster-drill --y=45 --x=-75 --layer=CMIP5.SFCWIND.HISTO.WINTER.ABS_PCTL95
 
 # run the CCCS Raster drill process returning CSV
-msc-pygeoapi process execute cccs raster-drill --y=45 --x=-75 --layer=CMIP5.SFCWIND.HISTO.WINTER.ABS_PCTL95 --format=CSV
+msc-pygeoapi process cccs execute raster-drill --y=45 --x=-75 --layer=CMIP5.SFCWIND.HISTO.WINTER.ABS_PCTL95 --format=CSV
 ```
 
 ## Development
