@@ -1,0 +1,89 @@
+{
+  "HDF5_DATE_TIME_SEP": "T",
+  "HDF5_GEOGRAPHIC_ID_PREFIX": "CDN",
+  "HDF5_GEOGRAPHIC_ATTR_ID": "geographicIdentifier",
+
+  "/" :  {
+
+      "ATTRIBUTES" : {
+
+        "epoch" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : "G1762"
+        },
+
+        "geographicIdentifier" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : ""
+        },
+
+        "horizDatumValue" : {
+           "DATATYPE" : "H5T_NATIVE_INT",
+           "DATASPACE" : "SCALAR",
+           "DATA" : 4326
+        },
+
+        "horizontalDatumReference" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : "EPSG"
+        },
+
+        "depthTypeIndex" : {
+           "DATATYPE" : "H5T_NATIVE_INT",
+           "DATASPACE" : "SCALAR",
+           "DATA" : ""
+        },
+
+        "issueDate" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : ""
+        },
+
+        "issueTime" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : ""
+        },
+
+        "metaFeatures" : {
+           "DATATYPE" :  "H5T_STRING",
+           "DATASPACE" : "SCALAR",
+           "DATA" : "NA"
+        },
+
+        "northBoundLatitude" : {
+          "DATATYPE" : "H5T_NATIVE_FLOAT",
+          "DATASPACE"  : "SCALAR",
+          "DATA" : ""
+        },
+
+        "southBoundLatitude" : {
+          "DATATYPE" : "H5T_NATIVE_FLOAT",
+          "DATASPACE"  : "SCALAR",
+          "DATA" : ""
+        },
+
+        "westBoundLongitude" : {
+          "DATATYPE" : "H5T_NATIVE_FLOAT",
+          "DATASPACE"  : "SCALAR",
+          "DATA" : ""
+        },
+
+        "eastBoundLongitude" : {
+          "DATATYPE" : "H5T_NATIVE_FLOAT",
+          "DATASPACE"  : "SCALAR",
+          "DATA" : ""
+        },
+
+        "verticalDatum" : {
+           "DATATYPE" : "H5T_NATIVE_INT",
+           "DATASPACE"  : "SCALAR",
+           "DATA" : ""
+      }
+    }
+  }
+}
