@@ -36,30 +36,34 @@ import logging
 #--- Using a PLEASE_LOG object for logging as an hommage
 #    to the one-and-only INTERCAL programming language.
 #    https://en.wikipedia.org/wiki/INTERCAL
-PLEASE_LOG= logging.getLogger(__name__)
+LOGGER= logging.getLogger(__name__)
+
+#---
+def sfmt_get():
+
+   LOGGER.debug('sfmt_get start')
+
+   LOGGER.debug('sfmt_get end')
+
+   return "Come from sfmt_get"
 
 #---
 @click.group('execute')
 def sfmt_get_execute():
     pass
 
-#---
-def sfmt_get()
-
-   PLEASE_LOG.info('sfmt_get start')
-
-   PLEASE_LOG.info('sfmt_get end')
-
-@click.command('sfmt_get')
+@click.command('sfmt-get')
 @click.pass_context
 #@click.option('--layer', help='Layer name to process', required=True)
 #@click.option('--x', help='x coordinate', required=True)
 #@click.option('--y', help='y coordinate', required=True)
 #@click.option('--format', 'format_', type=click.Choice(['GeoJSON', 'CSV']),
 #              default='GeoJSON', help='output format')
-def sfmt_get_cli():
+def sfmt_get_cli(dontCareAboutIt):
 
     output = sfmt_get()
+
+    LOGGER.debug('output='+str(output))
 
     #if format_ == 'GeoJSON':
     #    click.echo(json.dumps(output, ensure_ascii=False))

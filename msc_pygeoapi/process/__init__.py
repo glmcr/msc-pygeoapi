@@ -39,4 +39,4 @@ def process():
 
 
 #process.add_command(cccs)
-#process.add_command(dhp)
+process.add_command(dhp)

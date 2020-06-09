@@ -30,10 +30,10 @@
 
 import click
 
-#from msc_pygeoapi.process.dfo.chs.enav.dhp.sfmt_get import sfmt_get_execute
+from msc_pygeoapi.process.dfo.chs.enav.dhp.sfmt_get import sfmt_get_execute
 
 @click.group()
 def dhp():
     pass
 
-#dhp.add_command(sfmt_get_execute)
+dhp.add_command(sfmt_get_execute)
