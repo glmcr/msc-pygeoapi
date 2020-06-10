@@ -33,19 +33,17 @@ import json
 import click
 import logging
 
-#--- Using a PLEASE_LOG object for logging as an hommage
-#    to the one-and-only INTERCAL programming language.
-#    https://en.wikipedia.org/wiki/INTERCAL
-LOGGER= logging.getLogger(__name__)
+from msc_pygeoapi.process.dfo.chs.enav.dhp.sfmt_cfg import PROCESS_METADATA
+
+#LOGGER= logging.getLogger(__name__)
 
 #---
 def sfmt_get():
 
-   LOGGER.debug('sfmt_get start')
+   #LOGGER.debug('sfmt_get start')
+   #LOGGER.debug('sfmt_get end')
 
-   LOGGER.debug('sfmt_get end')
-
-   return "Come from sfmt_get"
+   return str(PROCESS_METADATA)
 
 #---
 @click.group('execute')
@@ -59,11 +57,13 @@ def sfmt_get_execute():
 #@click.option('--y', help='y coordinate', required=True)
 #@click.option('--format', 'format_', type=click.Choice(['GeoJSON', 'CSV']),
 #              default='GeoJSON', help='output format')
-def sfmt_get_cli(dontCareAboutIt):
+def sfmt_get_cli(dummyObject):
 
     output = sfmt_get()
 
-    LOGGER.debug('output='+str(output))
+    #LOGGER.debug('output='+str(output))
+
+    click.echo(output)
 
     #if format_ == 'GeoJSON':
     #    click.echo(json.dumps(output, ensure_ascii=False))
