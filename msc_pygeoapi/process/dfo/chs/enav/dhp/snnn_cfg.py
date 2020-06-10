@@ -29,8 +29,10 @@
 # =================================================================
 
 #---
-ALLOWED_DHP_SNNN_SOURCES= ( "S104_IWLS", "S111_RIOPS" )
-
+DHP_SNNN_SOURCES = {
+                     'S104_IWLS'  : 'get_iwls',
+                     #'S111_RIOPS' : 'get_riops'
+                   }
 #---
 PROCESS_METADATA = {
 

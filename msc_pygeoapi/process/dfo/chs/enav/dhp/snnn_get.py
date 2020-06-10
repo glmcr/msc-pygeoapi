@@ -33,10 +33,10 @@ import json
 import click
 import logging
 
+from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_chk import snnn_chk_bbox
 from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_cfg import ( PROCESS_METADATA,
-                                                             ALLOWED_DHP_SNNN_SOURCES )
-
-#LOGGER= logging.getLogger(__name__)
+                                                             DHP_SNNN_SOURCES )
+LOGGER= logging.getLogger(__name__)
 
 #---
 def snnn_get( snnn_source,
@@ -46,9 +46,22 @@ def snnn_get( snnn_source,
               bbox_nec_lon ):
 
    #LOGGER.debug('sfmt_get start')
-   #LOGGER.debug('sfmt_get end')
 
-   return (snnn_source, bbox_swc_lat, bbox_swc_lon, bbox_nec_lat, bbox_nec_lon)
+   #--- check if the snnn_source combo exists.
+   try:
+       snnn_get_func= DHP_SNNN_SOURCES[snnn_source]
+   except IndexError as err:
+       msg='invalid snnn_source value: {}'.format(err)
+       LOGGER.exception(msg)
+
+   #click.echo("snnn_get_func="+snnn_get_func)
+
+   return snnn_chk_bbox( (bbox_swc_lat,
+                          bbox_swc_lon,
+                          bbox_nec_lat,
+                          bbox_nec_lon) )
+
+   #LOGGER.debug('sfmt_get end')
 
 #---
 @click.group('execute')
@@ -69,7 +82,7 @@ def snnn_get_cli( objectNotUsedForNow,
                   bbox_nec_lat,
                   bbox_nec_lon ):
 
-    output = sfmt_get( snnn_source,
+    output = snnn_get( snnn_source,
                        bbox_swc_lat,
                        bbox_swc_lon,
                        bbox_nec_lat,

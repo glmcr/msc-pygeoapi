@@ -29,46 +29,9 @@
 # =================================================================
 
 import os
-import json
-import click
 import logging
 
-from msc_pygeoapi.process.dfo.chs.enav.dhp.sfmt_cfg import PROCESS_METADATA
-
-#LOGGER= logging.getLogger(__name__)
-
 #---
-def sfmt_get():
+def snnn_chk_bbox(bbox_list) :
 
-   #LOGGER.debug('sfmt_get start')
-   #LOGGER.debug('sfmt_get end')
-
-   return str(PROCESS_METADATA)
-
-#---
-@click.group('execute')
-def sfmt_get_execute():
-    pass
-
-@click.command('sfmt-get')
-@click.pass_context
-#@click.option('--layer', help='Layer name to process', required=True)
-#@click.option('--x', help='x coordinate', required=True)
-#@click.option('--y', help='y coordinate', required=True)
-#@click.option('--format', 'format_', type=click.Choice(['GeoJSON', 'CSV']),
-#              default='GeoJSON', help='output format')
-def sfmt_get_cli(dummyObject):
-
-    output = sfmt_get()
-
-    #LOGGER.debug('output='+str(output))
-
-    click.echo(output)
-
-    #if format_ == 'GeoJSON':
-    #    click.echo(json.dumps(output, ensure_ascii=False))
-    #elif format_ == 'CSV':
-    #    click.echo(output.getvalue())
-
-#---
-sfmt_get_execute.add_command(sfmt_get_cli)
+  return str(bbox_list)
