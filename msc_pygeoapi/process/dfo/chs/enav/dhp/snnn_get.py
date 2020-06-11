@@ -33,18 +33,36 @@
 import click
 import logging
 
-from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_chk import snnn_chk_bbox
-from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_cfg import DHP_SNNN_SOURCES
-#                                                        PROCESS_METADATA )
+from collections import namedtuple
+
+from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_chk import (
+    snnn_chk_bbox
+)
+
+from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_cfg import (
+    DHP_SNNN_SOURCES,
+    # PROCESS_METADATA
+)
 
 LOGGER = logging.getLogger(__name__)
 
 
-def snnn_get(snnn_source,
-             bbox_swc_lat,
-             bbox_swc_lon,
-             bbox_nec_lat,
-             bbox_nec_lon):
+def snnn_get(snnn_source: str,
+             bbox_swc_lat: float,
+             bbox_swc_lon: float,
+             bbox_nec_lat: float,
+             bbox_nec_lon: float):
+    """
+    Entry function for getting DHP S-NNN data
+
+    :param snnn_source: String name id. of the SNNN
+                        (ex. S111) and its source
+                        data(ex. RIOPS)
+    :param bbox_swc_lat: Bounding Box SW corner latitude(EPSG:4326)
+    :param bbox_swc_lon: Bounding Box SW corner longitude(EPSG:4326)
+    :param bbox_nec_lat: Bounding Box NE corner latitude(EPSG:4326)
+    :param bbox_nec_lon: Bounding Box NE corner longitude(EPSG:4326)
+    """
 
     # LOGGER.debug('sfmt_get start')
 
@@ -61,10 +79,12 @@ def snnn_get(snnn_source,
 
     # LOGGER.debug('sfmt_get end')
 
-    return snnn_chk_bbox((bbox_swc_lat,
-                          bbox_swc_lon,
-                          bbox_nec_lat,
-                          bbox_nec_lon))
+    # Use a named tuple that contains the regular bounding box coordinates:
+    llbbox = namedtuple(
+        'llbbox', ('swc_lat swc_lon nec_lat nec_lon')
+    )(bbox_swc_lat, bbox_swc_lon, bbox_nec_lat, bbox_nec_lon)
+
+    return snnn_chk_bbox(llbbox)
 
 
 @click.group('execute')
@@ -97,10 +117,10 @@ def snnn_get_cli(objectNotUsedForNow,
                  bbox_nec_lon):
 
     output = snnn_get(snnn_source,
-                      bbox_swc_lat,
-                      bbox_swc_lon,
-                      bbox_nec_lat,
-                      bbox_nec_lon)
+                      float(bbox_swc_lat),
+                      float(bbox_swc_lon),
+                      float(bbox_nec_lat),
+                      float(bbox_nec_lon))
 
     # LOGGER.debug('output='+str(output))
 
