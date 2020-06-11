@@ -64,6 +64,8 @@ def snnn_get(snnn_source: str,
     :param bbox_nec_lon: Bounding Box NE corner longitude(EPSG:4326)
     """
 
+    dhp_zip= None
+
     # LOGGER.debug('sfmt_get start')
 
     # Check if the snnn_source combo exists.
@@ -84,8 +86,9 @@ def snnn_get(snnn_source: str,
         'llbbox', ('swc_lat swc_lon nec_lat nec_lon')
     )(bbox_swc_lat, bbox_swc_lon, bbox_nec_lat, bbox_nec_lon)
 
-    return snnn_chk_bbox(llbbox)
+    snnn_chk_bbox(llbbox)
 
+    return dhp_zip
 
 @click.group('execute')
 def snnn_get_execute():

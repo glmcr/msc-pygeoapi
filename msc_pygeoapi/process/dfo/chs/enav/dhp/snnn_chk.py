@@ -29,8 +29,57 @@
 # =================================================================
 
 # import os
-# import logging
+import logging
+from collections import namedtuple
 
-def snnn_chk_bbox(bbox_list):
+LOGGER = logging.getLogger(__name__)
 
-    return str(bbox_list)
+def snnn_chk_bbox(llbbox: namedtuple):
+
+    """
+    Validate a regular EPSG:4236 lat-lon bounding box.
+    SW corner latitude MUST be smaller than NE corner latitude.
+    SW corner longitude MUST be smaller than NE corner longitude.
+
+    :param namedtuple: Contains the regular EPSG:4236 lat-lon
+                       bounding box attributes.
+    """
+
+
+    if llbbox.swc_lat < 0:
+       msg = 'llbbox.swc_lat={}'.format(llbbox.swc_lat)+' < 0'
+       LOGGER.error(msg)
+       raise ValueError(msg)
+
+
+    if llbbox.nec_lat < 0:
+        msg = 'llbbox.nec_lat={}'.format(llbbox.nec_lat)+' < 0'
+        LOGGER.error(msg)
+        raise ValueError(msg)
+
+
+    if llbbox.swc_lon > 0:
+        msg = 'llbbox.swc_lon={}'.format(llbbox.swc_lon)+' > 0'
+        LOGGER.error(msg)
+        raise ValueError(msg)
+
+
+    if llbbox.nec_lon > 0:
+        msg = 'llbbox.nec_lon={}'.format(llbbox.nec_lon)+' > 0'
+        LOGGER.error(msg)
+        raise ValueError(msg)
+
+
+    if llbbox.swc_lat > llbbox.nec_lat:
+        msg = 'llbbox.swc_lat={}'.format(llbbox.swc_lat)+\
+              ' > llbbox.nec_lat={}'.format(llbbox.nec_lat)
+        LOGGER.error(msg)
+        raise ValueError(msg)
+
+
+    if llbbox.swc_lon > llbbox.nec_lon:
+        msg = 'llbbox.swc_lon={}'.format(llbbox.swc_lon)+\
+              ' > llbbox.nec_lon={}'.format(llbbox.nec_lon)
+        LOGGER.error(msg)
+        raise ValueError(msg)
+
