@@ -28,10 +28,9 @@
 #
 # =================================================================
 
-import os
-import logging
+# import os
+# import logging
 
-#---
-def snnn_chk_bbox(bbox_list) :
+def snnn_chk_bbox(bbox_list):
 
-  return str(bbox_list)
+    return str(bbox_list)

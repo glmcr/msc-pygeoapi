@@ -28,74 +28,89 @@
 #
 # =================================================================
 
-import os
-import json
+# import os
+# import json
 import click
 import logging
 
 from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_chk import snnn_chk_bbox
-from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_cfg import ( PROCESS_METADATA,
-                                                             DHP_SNNN_SOURCES )
-LOGGER= logging.getLogger(__name__)
+from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_cfg import DHP_SNNN_SOURCES
+#                                                        PROCESS_METADATA )
 
-#---
-def snnn_get( snnn_source,
-              bbox_swc_lat,
-              bbox_swc_lon,
-              bbox_nec_lat,
-              bbox_nec_lon ):
+LOGGER = logging.getLogger(__name__)
 
-   #LOGGER.debug('sfmt_get start')
 
-   #--- check if the snnn_source combo exists.
-   try:
-       snnn_get_func= DHP_SNNN_SOURCES[snnn_source]
-   except IndexError as err:
-       msg='invalid snnn_source value: {}'.format(err)
-       LOGGER.exception(msg)
+def snnn_get(snnn_source,
+             bbox_swc_lat,
+             bbox_swc_lon,
+             bbox_nec_lat,
+             bbox_nec_lon):
 
-   #click.echo("snnn_get_func="+snnn_get_func)
+    # LOGGER.debug('sfmt_get start')
 
-   return snnn_chk_bbox( (bbox_swc_lat,
+    # Check if the snnn_source combo exists.
+    try:
+        snnn_get_func = DHP_SNNN_SOURCES[snnn_source]
+
+    except IndexError as err:
+
+        msg = 'invalid snnn_source value: {}'.format(err)
+        LOGGER.exception(msg)
+
+    # click.echo("snnn_get_func="+snnn_get_func)
+
+    # LOGGER.debug('sfmt_get end')
+
+    return snnn_chk_bbox((bbox_swc_lat,
                           bbox_swc_lon,
                           bbox_nec_lat,
-                          bbox_nec_lon) )
+                          bbox_nec_lon))
 
-   #LOGGER.debug('sfmt_get end')
 
-#---
 @click.group('execute')
 def snnn_get_execute():
     pass
 
+
 @click.command('snnn-get')
 @click.pass_context
-@click.option('--snnn_source', help='snnn_source(ex. S104_IWLS) dhp type name id. to process', required=True)
-@click.option('--bbox_swc_lat', help='Bounding Box SW corner latitude(EPSG:4326)', required=True)
-@click.option('--bbox_swc_lon', help='Bounding Box SW corner longitude(EPSG:4326)', required=True)
-@click.option('--bbox_nec_lat', help='Bounding Box NE corner latitude(EPSG:4326)', required=True)
-@click.option('--bbox_nec_lon', help='Bounding Box NE corner longitude(EPSG:4326)', required=True)
-def snnn_get_cli( objectNotUsedForNow,
-                  snnn_source,
-                  bbox_swc_lat,
-                  bbox_swc_lon,
-                  bbox_nec_lat,
-                  bbox_nec_lon ):
+@click.option('--snnn_source',
+              help='snnn_source(ex. S104_IWLS) dhp type name id. to process',
+              required=True)
+@click.option('--bbox_swc_lat',
+              help='Bounding Box SW corner latitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_swc_lon',
+              help='Bounding Box SW corner longitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_nec_lat',
+              help='Bounding Box NE corner latitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_nec_lon',
+              help='Bounding Box NE corner longitude(EPSG:4326)',
+              required=True)
+def snnn_get_cli(objectNotUsedForNow,
+                 snnn_source,
+                 bbox_swc_lat,
+                 bbox_swc_lon,
+                 bbox_nec_lat,
+                 bbox_nec_lon):
 
-    output = snnn_get( snnn_source,
-                       bbox_swc_lat,
-                       bbox_swc_lon,
-                       bbox_nec_lat,
-                       bbox_nec_lon )
+    output = snnn_get(snnn_source,
+                      bbox_swc_lat,
+                      bbox_swc_lon,
+                      bbox_nec_lat,
+                      bbox_nec_lon)
 
-    #LOGGER.debug('output='+str(output))
+    # LOGGER.debug('output='+str(output))
 
     click.echo(str(output))
 
-    #if format_ == 'GeoJSON':
+    # if format_ == 'GeoJSON':
     #    click.echo(json.dumps(output, ensure_ascii=False))
-    #elif format_ == 'CSV':
+    # elif format_ == 'CSV':
     #    click.echo(output.getvalue())
 
-#---
+
+#
 snnn_get_execute.add_command(snnn_get_cli)

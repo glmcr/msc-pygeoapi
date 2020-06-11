@@ -28,12 +28,11 @@
 #
 # =================================================================
 
-#---
 DHP_SNNN_SOURCES = {
-                     'S104_IWLS'  : 'get_iwls',
-                     #'S111_RIOPS' : 'get_riops'
+                     'S104_IWLS': 'get_iwls',
+                     # 'S111_RIOPS' : 'get_riops'
                    }
-#---
+
 PROCESS_METADATA = {
 
     'version': '0.1.0',
