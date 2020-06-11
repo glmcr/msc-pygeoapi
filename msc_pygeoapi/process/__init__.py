@@ -30,13 +30,14 @@
 
 import click
 
-#from msc_pygeoapi.process.cccs import cccs
+# from msc_pygeoapi.process.cccs import cccs
 from msc_pygeoapi.process.dfo.chs.enav.dhp import dhp
+
 
 @click.group()
 def process():
     pass
 
 
-#process.add_command(cccs)
+# process.add_command(cccs)
 process.add_command(dhp)
