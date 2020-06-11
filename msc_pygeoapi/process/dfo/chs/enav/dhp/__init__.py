@@ -30,7 +30,14 @@
 
 import click
 
-from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_get import snnn_get_execute
+# We are in msc_pygeoapi.process.dfo.chs.enav.dhp module
+# then we can use a relative import.
+# from .snnn_get import snnn_get_execute
+
+# This is more explicit.
+from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_get import (
+    snnn_get_execute
+)
 
 
 @click.group()
@@ -38,4 +45,5 @@ def dhp():
     pass
 
 
+# NOTE: dhp is a msc_pygeoapi.process object.
 dhp.add_command(snnn_get_execute)
