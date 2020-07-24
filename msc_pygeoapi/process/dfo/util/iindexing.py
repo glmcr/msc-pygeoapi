@@ -3,8 +3,8 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : ENAV-DHP
-# File/Fichier    : dhp/util/indexing.py
+# Project/Projet  : dfo msc-pygeoapi process plugins.
+# File/Fichier    : dfo/util/indexing.py
 # Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
 #
 # Description: -
@@ -52,8 +52,8 @@ _DICT_KEYS_SEP= ( str(",") ,)
 _LON_ID= ( str("Lon") ,)
 _LAT_ID= ( str("Lat") ,)
 
-_POINTS_DATAIN_ID= ( str("POINTS_DATAIN") ,)
-_POINTS_DATAOUT_ID= ( str("POINTS_DATAOUT") ,)
+_POINTS_DATAIN_ID= ( str("PTS_DIN") ,)
+_POINTS_DATAOUT_ID= ( str("PTS_DOUT") ,)
 
 #--- Seems odd but it's handy for dictionary indexing:
 _NAME_ID= ( str("WhoAmI") ,)
