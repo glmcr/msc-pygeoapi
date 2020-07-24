@@ -1,0 +1,1318 @@
+{
+
+     "MainConstituents" : {
+
+          "Z0" : {
+               "Frequency" : 0.0,
+               "DoodsonNumbers" : [0, 0, 0, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "SA" : {
+               "Frequency" : 0.0001140741,
+               "DoodsonNumbers" : [0, 0, 1, 0, 0, -1],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "SSA" : {
+               "Frequency" : 0.0002281591,
+               "DoodsonNumbers" : [0, 0, 2, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "MSM" : {
+               "Frequency" : 0.0013097808,
+               "DoodsonNumbers" : [0, 1, -2, 1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "MM" : {
+               "Frequency" : 0.0015121518,
+               "DoodsonNumbers" : [0, 1, 0, -1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "MSF" : {
+               "Frequency" : 0.0028219327,
+               "DoodsonNumbers" : [0, 2, -2, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "MF" : {
+               "Frequency" : 0.0030500918,
+               "DoodsonNumbers" : [0, 2, 0, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "ALP1" : {
+               "Frequency" : 0.0343965699,
+               "DoodsonNumbers" : [1, -4, 2, 1, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0360,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1906,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "2Q1" : {
+               "Frequency" : 0.0357063507,
+               "DoodsonNumbers" : [1, -3, 0, 2, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0063,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0241,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0607,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0063,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1885,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "SIG1" : {
+               "Frequency" : 0.0359087218,
+               "DoodsonNumbers" : [1, -3, 2, 0, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0095,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0061,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1884,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0087,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "Q1" : {
+               "Frequency" : 0.0372185026,
+               "DoodsonNumbers" : [1, -2, 0, 1, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -3, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0007,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0039,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, -2, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0010,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0115,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0292,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0057,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 1],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0008,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1884,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0018,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0028,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "RHO1" : {
+               "Frequency" : 0.0374208736,
+               "DoodsonNumbers" : [1, -2, 2, -1, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0058,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1882,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0131,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0576,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0175,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "O1" : {
+               "Frequency" : 0.0387306544,
+               "DoodsonNumbers" : [1, -1, 0, 0, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0003,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0058,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1885,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, -1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0029,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0064,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0010,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "TAU1" : {
+               "Frequency" : 0.0389588136,
+               "DoodsonNumbers" : [1, -1, 2, 0, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0446,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0426,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0284,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.2170,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0142,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "BET1" : {
+               "Frequency" : 0.0400404353,
+               "DoodsonNumbers" : [1, 0, -2, 1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.2266,  "AmplitudeRatioFlag" : 0 }
+               ]
+          },
+
+          "NO1" : {
+               "Frequency" : 0.0402685944,
+               "DoodsonNumbers" : [1, 0, 0, 1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0057,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0665,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.3596,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0331,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.2227,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0290,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0290,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.2004,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0054,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "CHI1" : {
+               "Frequency" : 0.0404709654,
+               "DoodsonNumbers" : [1, 0, 2, -1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0282,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.2187,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "PI1" : {
+               "Frequency" : 0.0414385130,
+               "DoodsonNumbers" : [1, 1, -3, 0, 0, 1],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0078,  "AmplitudeRatioFlag" : 0 }
+               ]
+          },
+
+          "P1" : {
+               "Frequency" : 0.0415525871,
+               "DoodsonNumbers" : [1, 1, -2, 0, 0, 0],
+               "PhaseCorrection" : -0.25,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0008,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0112,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 0, 2],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0015,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0003,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "S1" : {
+               "Frequency" : 0.0416666721,
+               "DoodsonNumbers" : [1, 1, -1, 0, 0, 1],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, 0, -2],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.3534,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0264,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "K1" : {
+               "Frequency" : 0.0417807462,
+               "DoodsonNumbers" : [1, 1, 0, 0, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0002,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0007,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0198,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1356,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0029,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0002,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 1  }
+               ]
+          },
+
+          "PSI1" : {
+               "Frequency" : 0.0418948203,
+               "DoodsonNumbers" : [1, 1, 1, 0, 0, -1],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0190,  "AmplitudeRatioFlag" : 0 }
+               ]
+          },
+
+          "PHI1" : {
+               "Frequency" : 0.0420089053,
+               "DoodsonNumbers" : [1, 1, 2, 0, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0344,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0106,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 0, -2],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0132,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0384,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0185,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "THE1" : {
+               "Frequency" : 0.0430905270,
+               "DoodsonNumbers" : [1, 2, -2, 1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0300,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0141,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0317,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1993,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "J1" : {
+               "Frequency" : 0.0432928981,
+               "DoodsonNumbers" : [1, 2, 0, -1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0294,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1980,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0047,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0027,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0816,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0331,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 2, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0027,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0152,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0098,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0057,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "OO1" : {
+               "Frequency" : 0.0448308380,
+               "DoodsonNumbers" : [1, 3, 0, 0, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0037,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1496,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-2, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0296,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0240,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [-1, 1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0099,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.6398,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1342,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 3, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0086,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "UPS1" : {
+               "Frequency" : 0.0463429898,
+               "DoodsonNumbers" : [1, 4, 0, -1, 0, 0],
+               "PhaseCorrection" : -0.75,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0611,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.6399,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1318,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0289,  "AmplitudeRatioFlag" : 1  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0257,  "AmplitudeRatioFlag" : 1  }
+               ]
+          },
+
+          "OQ2" : {
+               "Frequency" : 0.0759749451,
+               "DoodsonNumbers" : [2, -3, 0, 3, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.1042,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0386,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "EPS2" : {
+               "Frequency" : 0.0761773161,
+               "DoodsonNumbers" : [2, -3, 2, 1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0075,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0402,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0373,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "2N2" : {
+               "Frequency" : 0.0774870970,
+               "DoodsonNumbers" : [2, -2, 0, 2, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0061,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0117,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0678,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0374,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "MU2" : {
+               "Frequency" : 0.0776894680,
+               "DoodsonNumbers" : [2, -2, 2, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0018,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0104,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0375,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "N2" : {
+               "Frequency" : 0.0789992488,
+               "DoodsonNumbers" : [2, -1, 0, 1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0039,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 1],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0008,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0005,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0373,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "NU2" : {
+               "Frequency" : 0.0792016198,
+               "DoodsonNumbers" : [2, -1, 2, -1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0373,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0042,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0042,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0036,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "GAM2" : {
+               "Frequency" : 0.0803090296,
+               "DoodsonNumbers" : [2, 0, -2, 2, 0, 0],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-2, -2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.1429,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0293,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0330,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "H1" : {
+               "Frequency" : 0.0803973266,
+               "DoodsonNumbers" : [2, 0, -1, 0, 0, 1],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0224,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, -1],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0447,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "M2" : {
+               "Frequency" : 0.0805114007,
+               "DoodsonNumbers" : [2, 0, 0, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, -1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0005,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0373,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, -1, 0],  "PhaseCorrection" : 0.25,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0009,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0002,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0006,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0002,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "H2" : {
+               "Frequency" : 0.0806254748,
+               "DoodsonNumbers" : [2, 0, 1, 0, 0, -1],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0217,  "AmplitudeRatioFlag" : 0 }
+               ]
+          },
+
+          "LDA2" : {
+               "Frequency" : 0.0818211815,
+               "DoodsonNumbers" : [2, 1, -2, 1, 0, 0],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0448,  "AmplitudeRatioFlag" : 0 }
+               ]
+          },
+
+          "L2" : {
+               "Frequency" : 0.0820235525,
+               "DoodsonNumbers" : [2, 1, 0, -1, 0, 0],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0366,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0047,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.2505,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.1102,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [2, 2, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0156,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "T2" : {
+               "Frequency" : 0.0832192592,
+               "DoodsonNumbers" : [2, 2, -3, 0, 0, 1],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : []
+          },
+
+          "S2" : {
+               "Frequency" : 0.0833333333,
+               "DoodsonNumbers" : [2, 2, -2, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0022,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0001,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "R2" : {
+               "Frequency" : 0.0834474074,
+               "DoodsonNumbers" : [2, 2, -1, 0, 0, -1],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, 0, 2],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.2535,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 2],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0141,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "K2" : {
+               "Frequency" : 0.0835614924,
+               "DoodsonNumbers" : [2, 2, 0, 0, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [-1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0024,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [-1, 1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0004,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0128,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.2980,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0324,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "ETA2" : {
+               "Frequency" : 0.0850736443,
+               "DoodsonNumbers" : [2, 3, 0, -1, 0, 0],
+               "PhaseCorrection" : 0.00,
+               "Satellites" : [
+                    { "DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0187,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 1, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.4355,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [0, 2, 0],  "PhaseCorrection" : 0.00,  "AmplitudeRatio" : 0.0467,  "AmplitudeRatioFlag" : 0  },
+                    { "DoodsonNbChanges" : [1, 0, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0747,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [1, 1, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0482,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [1, 2, 0],  "PhaseCorrection" : 0.75,  "AmplitudeRatio" : 0.0093,  "AmplitudeRatioFlag" : 2  },
+                    { "DoodsonNbChanges" : [2, 0, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0078,  "AmplitudeRatioFlag" : 0  }
+               ]
+          },
+
+          "M3" : {
+               "Frequency" : 0.1207671010,
+               "DoodsonNumbers" : [3, 0, 0, 0, 0, 0],
+               "PhaseCorrection" : -0.50,
+               "Satellites" : [
+                    {"DoodsonNbChanges" : [0, -1, 0],  "PhaseCorrection" : 0.50,  "AmplitudeRatio" : 0.0564,  "AmplitudeRatioFlag" : 0 }
+               ]
+          }
+
+     },
+
+     "ShallowWaterConstituents" : {
+
+          "2PO1" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "P1", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "SO1" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST36" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "2NS2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }
+               ]
+          },
+
+          "ST37" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST1" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "O2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1" ,"MultFactor" :2.0 }
+               ]
+          },
+
+          "ST4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "SNK2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "OP2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "P1", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MKS2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : -1.0 }
+               ]
+          },
+
+          "2SK2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "MSN2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST7" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2SM2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : -1.0 }
+               ]
+          },
+
+          "ST38" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : -2.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "SKM2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : -1.0 }
+               ]
+          },
+
+          "2SN2" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "NO3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MO3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "NK3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "SO3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MK3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "SP3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "P1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "SK3" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST8" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "N4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2" ,"MultFactor" :2.0 }
+               ]
+          },
+
+          "3MS4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST39" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MN4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST40" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST9" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "M4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :2.0 }
+               ]
+          },
+
+          "ST10" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "SN4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "KN4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MS4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MK4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "SL4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "L2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "S4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2" ,"MultFactor" :2.0 }
+               ]
+          },
+
+          "SK4" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MNO5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2MO5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "3MP5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "P1", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "MNK5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2MP5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "P1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "2MK5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "MSK5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "3KM5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2SK5" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST11" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 3.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2NM6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST12" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST41" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "2MN6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST13" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "M6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :3.0 }
+               ]
+          },
+
+          "MSN6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MKN6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2MS6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "2MK6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "NSK6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "2SM6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "MSK6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST42" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "S6" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2" ,"MultFactor" :3.0 }
+               ]
+          },
+
+          "ST14" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST15" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "M7" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :3.5 }
+               ]
+          },
+
+          "ST16" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "3MK7" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST17" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "O1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST18" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "3MN8" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST19" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : -1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "M8" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :4.0 }
+               ]
+          },
+
+          "ST20" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST21" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "3MS8" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "3MK8" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST22" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 1.0 }
+               ]
+          },
+
+          "ST23" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST24" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST25" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST26" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "4MK9" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 4.0 }
+               ]
+          },
+
+          "ST27" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST28" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 4.0 }
+               ]
+          },
+
+          "M10" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :5.0 }
+               ]
+          },
+
+          "ST29" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST30" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 4.0 }
+               ]
+          },
+
+          "ST31" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 2.0 }
+               ]
+          },
+
+          "ST32" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 2.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          },
+
+          "ST33" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "K1", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 4.0 }
+               ]
+          },
+
+          "M12" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "M2" ,"MultFactor" :6.0 }
+               ]
+          },
+
+          "ST34" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 5.0 }
+               ]
+          },
+
+          "ST35" : {
+               "MainConstituentsDerivations" : [
+                    { "MainConstituent" : "N2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "S2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "K2", "MultFactor" : 1.0 }, 
+                    { "MainConstituent" : "M2", "MultFactor" : 3.0 }
+               ]
+          }
+
+     },
+
+     "ASTRO_PARAMS" : {
+
+         "COS_INDEX" : 0,
+         "SIN_INDEX" : 1,
+
+         "COS_ACC_INIT":  1.0,
+         "SIN_ACC_INIT":  0.0, 
+
+         "F_NODAL_MOD_ADJ_INIT" : 1.0,
+
+         "FV_NODAL_ADJ_FLAGS" : [ 0, 1, 2 ],
+         "FV_NODAL_ADJ_CONSTANTS" : [ 1.0 , 0.36309, 2.59808 ],
+           
+         "V_ASTRO_PHASE_INT_THRESHOLD" : 2
+           
+     },
+
+     "SUN_MOON_EPHEMERIDES_PARAMS" : {
+
+         "GREGORIAN_DAY0_SECONDS" : 2209032000,
+
+         "D1_FACTOR" : 0.0001,
+
+         "DEG2_DERIVATIVE_FACTOR" : 0.00000002,
+         
+         "DEG3_DERIVATIVE_FACTOR" : 0.000000000003,  
+
+         "SUN_EPH_POLY_COEFF_H" : [ 279.696678, 0.9856473354, 0.00002267 ],
+ 
+         "SUN_EPH_POLY_COEFF_PP" : [ 281.220833, 0.0000470684, 0.0000339, 0.00000007 ],
+
+         "MOON_EPH_POLY_COEFF_S" : [ 270.434164, 13.1763965268, 0.000085, 0.000000039 ],
+
+         "MOON_EPH_POLY_COEFF_P" : [ 334.329556, 0.1114040803, 0.0007739, 0.00000026 ],
+
+         "MEAN_ASCMODE_EPH_POLY_COEFF_NP" : [ -259.183275, 0.0529539222, 0.0001557, 0.00000005 ]    
+      }
+}
