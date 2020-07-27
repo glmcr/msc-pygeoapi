@@ -33,18 +33,24 @@ import click
 
 #---
 from msc_pygeoapi.process.dfo.chs.enav.dhp import (
-    chs_enav_dhp
+    dhp_get_execute
 )
 
-#from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_get import (
-#    snnn_get_execute
+#from msc_pygeoapi.process.dfo.chs.enav.dhp import (
+#    chs_enav_dhp
 #)
 
 
 @click.group()
-def dfo():
+def dfo_chs_enav():
     pass
+
+dfo_chs_enav.add_command(dhp_get_execute)
+
+#@click.group()
+#def dfo():
+#    pass
 
 
 # NOTE: dfo is a msc_pygeoapi.process object.
-dfo.add_command(chs_enav_dhp)
+#dfo.add_command(chs_enav_dhp)

@@ -41,18 +41,18 @@ from msc_pygeoapi.process.dfo.chs.enav.dhp.validations import (
 
 from msc_pygeoapi.process.dfo.chs.enav.dhp.cfg import (
     DHP_SNNN_SOURCES,
-    # PROCESS_METADATA
+    PROCESS_METADATA
 )
 
 LOGGER = logging.getLogger(__name__)
 
 
 #---
-def get_it(type_source: str,
-           bbox_swc_lat: float,
-           bbox_swc_lon: float,
-           bbox_nec_lat: float,
-           bbox_nec_lon: float):
+def dhp_get(type_source: str,
+            bbox_swc_lat: float,
+            bbox_swc_lon: float,
+            bbox_nec_lat: float,
+            bbox_nec_lon: float):
 
     """
     Entry function for getting DHP S-NNN data
@@ -92,14 +92,13 @@ def get_it(type_source: str,
 
     return dhp_zip
 
+#---
 @click.group('execute')
-def chs_enav_dhp():
+def dhp_get_execute():
     pass
-#def snnn_get_execute():
-#    pass
 
 
-@click.command('chs-enav-dhp')
+@click.command('dhp-get')
 @click.pass_context
 @click.option('--type_source',
               help='type_source (ex. S104_IWLS, type->S104 source->IWLS)',
@@ -123,11 +122,11 @@ def dhp_get_cli(objectNotUsedForNow,
                 bbox_nec_lat,
                 bbox_nec_lon):
 
-    output = get_it(type_source,
-                    float(bbox_swc_lat),
-                    float(bbox_swc_lon),
-                    float(bbox_nec_lat),
-                    float(bbox_nec_lon))
+    output = dhp_get(type_source,
+                     float(bbox_swc_lat),
+                     float(bbox_swc_lon),
+                     float(bbox_nec_lat),
+                     float(bbox_nec_lon))
 
     # LOGGER.debug('output='+str(output))
 
@@ -140,5 +139,4 @@ def dhp_get_cli(objectNotUsedForNow,
 
 
 #---
-chs_enav_dhp.add_command(dhp_get_cli)
-#snnn_get_execute.add_command(snnn_get_cli)
+dhp_get_execute.add_command(dhp_get_cli)

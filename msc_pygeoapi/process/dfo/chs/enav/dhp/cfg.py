@@ -36,7 +36,7 @@ DHP_SNNN_SOURCES = {
 PROCESS_METADATA = {
 
     'version': '0.1.0',
-    'id': 'chs-enav-dhp',
+    'id': 'dhp-get',
     'title': 'on-demand DFO-CHS-ENAV-DHP data generation process',
     'description': 'on-demand DFO-CHS-ENAV-DHP data generation process',
     'keywords': ['on-demand DFO-CHS-ENAV-DHP'],
