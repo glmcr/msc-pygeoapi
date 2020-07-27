@@ -101,7 +101,7 @@ def dhp_get_execute():
 @click.command('dhp-get')
 @click.pass_context
 @click.option('--type_source',
-              help='type_source (ex. S104_IWLS, type->S104 source->IWLS)',
+              help='type_source (ex. S111_WebTide, type->S111 source->WebTide)',
               required=True)
 @click.option('--bbox_swc_lat',
               help='Bounding Box SW corner latitude(EPSG:4326)',

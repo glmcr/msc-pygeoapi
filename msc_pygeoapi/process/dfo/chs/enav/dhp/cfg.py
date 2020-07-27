@@ -29,7 +29,9 @@
 # =================================================================
 
 DHP_SNNN_SOURCES = {
-                     'S104_IWLS': 'get_iwls',
+                     'S111_WebTide': get_webtide,
+                     'S104_WebTide': get_webtide
+                     #'S104_IWLS': 'get_iwls',
                      # 'S111_RIOPS' : 'get_riops'
                    }
 
@@ -55,7 +57,7 @@ PROCESS_METADATA = {
     }],
     'inputs': [{
         'id': 'type_source',
-        'title': '<snnn type(ex. S111)>_<input data source(ex. ECCC-RIOPS)> dhp data id.',
+        'title': '<snnn type(ex. S111)>_<input data source(ex. WebTide)> dhp data id.',
         'input': {
             'literalDataDomain': {
                 'dataType': 'string',
