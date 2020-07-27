@@ -3,11 +3,11 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : dfo msc-pygeoapi process plugins
-# File/Fichier    : dfo/tidal/astro/tdl_consts_astro.py
-# Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
+# Project/Projet  : ENAV-DHP
+# File/Fichier    : dhp/tidalprd/astro/ConstituentAstroFactory.py
+# Creation        : July/Juillet 2018 - G. Mercier - DFO-MPO/CHS-SHC
 #
-# Description: - class dfo.tidal.astro.tdl_consts_astro implementation.
+# Description: - Class dhp.tidalprd.astro.ConstituentAstroFactory implementation.
 #
 # Remarks :
 #
@@ -30,17 +30,15 @@
 #
 #==============================================================================
 
-#--- This src file was named ConstituentAstroFactory.py in the original
-#    code base and was implementing ConstituentAstroFactory class.
-
 #--- Do not allow relative imports.
 from __future__ import absolute_import
 
 #---
-from msc_pygeaopi.process.dfo.tidal.astro.astro_infos import astro_infos
+from dhp.tidalprd.ITidalPrd import ITidalPrd
+from dhp.tidalprd.astro.AstroInfosFactory import AstroInfosFactory
 
 #---
-class tdl_consts_astro(object) :
+class ConstituentAstroFactory(ITidalPrd) :
 
   """
   Class ConstituentAstroFactory: Generic super class representing
@@ -54,7 +52,7 @@ class tdl_consts_astro(object) :
     Name: The name(string) of a specific tidal constituent ex. M2, O1, S2 and so on.
     """
 
-    #ITidalPrd.__init__(self)
+    ITidalPrd.__init__(self)
 
     self._name= Name
 

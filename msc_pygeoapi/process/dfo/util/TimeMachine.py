@@ -3,11 +3,11 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : dfo msc-pygeoapi process plogins
-# File/Fichier    : dfo/util/time_machine.py
-# Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
+# Project/Projet  : ENAV-DHP
+# File/Fichier    : dhp/util/TimeMachine.py
+# Creation        : July/Juillet 2018 - G. Mercier - DFO-MPO/CHS-SHC
 #
-# Description: - Class dfo.util.time_machine.py
+# Description: - Class dhp.util.TimeMachine implementation.
 #
 # Remarks :
 #
@@ -40,10 +40,10 @@ import inspect
 import calendar
 
 #---
-#from dhp.util.ITimeMachine import ITimeMachine
+from dhp.util.ITimeMachine import ITimeMachine
 
 #---
-class time_machine(object) :
+class TimeMachine(ITimeMachine) :
 
   """
   Utility class dealing with date-time processing stuff.
@@ -56,27 +56,24 @@ class time_machine(object) :
 
   #---
   def __init__(self) :
-    pass
 
-    #ITimeMachine.__init__(self)
+    ITimeMachine.__init__(self)
 
     #methId= str(__name__)+"."+ str(inspect.stack(0)[0][3]) + " method:"
 
   #--- Instance method getDateTimeString :
-  def getDateTimeStringZ( self,
-                          SecondsSE: int,
-                          DateTimeStringFormat: str= None) -> str:
+  def getDateTimeStringZ(self, SecondsSE, DateTimeStringFormat= None) :
+
     """
     Returns a date-time string built from the SecondsSE argument
     and formatted with the DateTimeStringFormat argument if any.
 
     SecondsSE (type->int): Seconds since the UNIX epoch start.
 
-    DateTimeStringFormat (type->str) <OPTIONAL> default->None :
-    The string format to use for the date-time string to built
-    from the SecondsSE argument.
+    DateTimeStringFormat (type->string) <OPTIONAL> default->None : The string format to use for the date-time
+    string to built from the SecondsSE argument.
 
-    return (type->str)
+    return (type->string)
     """
 
     methId= str(__name__)+"."+ str(inspect.stack(0)[0][3]) + " method:"
@@ -90,20 +87,20 @@ class time_machine(object) :
     #  sys.exit("ERROR "+methId+" SecondsSE < 0! \n")
 
     if DateTimeStringFormat is None :
-      DateTimeStringFormat= _DEFAULT_GET_SECONDS_FMT[0]
+      DateTimeStringFormat= self.DEFAULT_GET_SECONDS_FMT[0]
 
     #: Doc Use the old-school basic time.strftime method to get what we want:
     return time.strftime(DateTimeStringFormat, time.gmtime(SecondsSE) )
 
   #---
-  def getYYYYMMDDYesterday(self,
-                           YYYYMMDDToday: str) -> str:
+  def getYYYYMMDDYesterday(self, YYYYMMDDToday) :
+
     """
     Build Yesterday' YYYYMMDD string using today's YYYYMMDD string.
 
-    YYYYMMDDToday (type->str) : Today's YYYYMMDD string.
+    YYYYMMDDToday (type->string) : Today's YYYYMMDD string.
 
-    return (type->str) : Yesterday's YYYYMMDD string.
+    return (type->string) : Yesterday's YYYYMMDD string.
     """
 
     #: Doc Need to go back 24 hours in the past to also consider yesterday's NEMO data
@@ -112,27 +109,22 @@ class time_machine(object) :
 
     #    NOTE: No need to do that when running inside in the ECCC Maestro oper. env.
     #          system using DATEO variable which is the synoptic hour 00Z, 06Z, 12Z and 18Z.
-    seconds24HInPast= self.getSeconds(YYYYMMDDToday, _YYYYMMDDFMT[0]) - _SECONDS_PER_DAY[0]
+    seconds24HInPast= self.getSeconds(YYYYMMDDToday, self.YYYYMMDDFmt[0]) - self.SECONDS_PER_DAY[0]
 
     #: Doc Using getDateTimeStringZ from super class TimeMachine to return yesterday's YYYYMMDD string.
-    return self.getDateTimeStringZ(seconds24HInPast).split( _DATE_TIME_SPLIT_STR[0] )[0]
+    return self.getDateTimeStringZ(seconds24HInPast).split( self.DATE_TIME_SPLIT_STR[0] )[0]
 
   #--- Instance method getSeconds
-  def getSeconds( self,
-                  YYYYMMDDhhmmss: str,
-                  DateTimeStringFormat: str) -> int:
+  def getSeconds(self, YYYYMMDDhhmmss, DateTimeStringFormat) :
+
     """
     Instance method returning the conversion to seconds since
-    the UNIX epoch of a date-time string.
+    the UNIX epoch start of a date-time string.
 
     YYYYMMDDhhmmss (type->string): The date-time string to convert.
 
-    DateTimeStringFormat (type->string): The Python time.strptime
-    method string format to use for the conversion.
+    DateTimeStringFormat (type->string): The Python time.strptime method string format to use for the conversion.
     (https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
-
-    return (type->str): seconds since the UNIX epoch computed from
-    the arg. YYYYMMDDhhmmss
     """
 
     methId= str(__name__)+"."+ str(inspect.stack(0)[0][3]) + " method:"
@@ -149,8 +141,7 @@ class time_machine(object) :
 
   #---
   @staticmethod
-  def roundPastToTimeIncrSeconds( IncrSeconds: int,
-                                  Seconds: int     ) -> int:
+  def roundPastToTimeIncrSeconds(IncrSeconds, Seconds) :
 
     """
     Class method which round a date-time in seconds since the epoch
@@ -158,7 +149,6 @@ class time_machine(object) :
     which have an exact difference of -IncrSeconds with it.
 
     IncrSeconds (type->int): A time increment in seconds (usually 900,1800,3600,...)
-
     Seconds (type->int):  A date-time in seconds since the UNIX epoch start.
 
     Remark: Using tail recursion.
@@ -167,11 +157,7 @@ class time_machine(object) :
     of the calling method to pass values as Seconds > IncrSeconds.
 
     NOTE2: No checks if the arguments are negative. It is the responsibility
-    of the calling method to pass positive int values.
-
-    return (type->int): date-time in seconds since the epoch rounded to the
-    nearest date-time in seconds since the epoch in the past which have an
-    exact difference of -IncrSeconds with it.
+    of the calling method to pass positive values.
     """
 
     ret= Seconds
@@ -179,6 +165,6 @@ class time_machine(object) :
     if ret%IncrSeconds != 0 :
 
       #: Doc recursive call here !
-      ret= time_machine.roundPastToTimeIncrSeconds(IncrSeconds, Seconds - 1)
+      ret= TimeMachine.roundPastToTimeIncrSeconds(IncrSeconds, Seconds - 1)
 
     return ret

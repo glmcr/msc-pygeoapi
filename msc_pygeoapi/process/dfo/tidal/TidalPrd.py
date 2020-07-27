@@ -3,11 +3,11 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : dfo msc-pygeoapi process plugins
-# File/Fichier    : dfo/tidal/prediction.py
-# Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
+# Project/Projet  : ENAV-DHP
+# File/Fichier    : dhp/tidalprd/TidalPrd.py
+# Creation        : July/Juillet 2018 - G. Mercier - DFO-MPO/CHS-SHC
 #
-# Description: - Class dfo.tidal.prediction implementation.
+# Description: - Class dhp.tidalprd.TidalPrd implementation.
 #
 # Remarks :
 #
@@ -38,80 +38,39 @@ import os
 import re #--- Regular expressions module
 import sys
 
-#--- Avoid namespace pollution SNAFUs with explicit imports:
-from msc_pygeoapi.process.dfo.tidal import (
-    _ADHOC_CHARTDATUM_CORR_FACTOR
-)
-
-from msc_pygeoapi.process.dfo.util.time_machine import time_machine
-
 #---
-class prediction(time_machine) :
+#from msc_pygeoapi.process.dfo.chs.ICHS import ICHS
+from msc_pygeoapi.process.dfo.chs import _CHART_DATUM_CONV_ID
+from msc_pygeoapi.process.dfo.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.util.TimeMachine import TimeMachine
+
+#----
+class TidalPrd(ITidalPrd, TimeMachine) :
 
   """
-  Generic class which must be inherited
-  by specific tidal methods classes.
+  Generic class which must be sub-classed by specific tidal methods classes.
   """
 
   #---
   def __init__(self) :
 
-    #ITidalPrd.__init__(self)
-    time_machine.__init__(self)
+    ITidalPrd.__init__(self)
+    TimeMachine.__init__(self)
 
-    #--- self._astroInfosFactoryObj generic attribute is supposed to become an
+    #--- self.astroInfosFactoryObj generic attribute is supposed to become an
     #    AstroInfosFactory  derived type object instance created by specific
     #    tidal methods sub-classes instances.
-    self._astroInfosFactoryObj= None
+    self.astroInfosFactoryObj= None
 
   #---
-  @staticmethod
-  def getAdHocChartDatumCorrection( WLZAmplitudeStrId: str,
-                                    CDCorrFactor: float = _ADHOC_CHARTDATUM_CORR_FACTOR) -> tuple :
+  def getTilePredictions( self,
+                          TidalPrdFactoryObj,
+                          TileDict,
+                          DateTimeStampsDict ):
     """
-    Apply an ad-hoc chart datum correction computed from the water levels
-    tidal constituents amplitudes.
-
-    NOTE: This ad-hoc chart datum correction using tidal constituents amplitudes
-    is temporary and is supposed to be eventually replaced by a more accurate
-    and rigourous procedure.
-
-    WLZAmplitudeStrId : The string key id. to index the WLs tidal
-    constiuents amplitudes in PointDataDict.
-
-    CDCorrFactor<OPTIONAL, default== _ADHOC_CHARTDATUM_CORR_FACTOR> :
-    A correction factor to apply to the computed ad-hoc CD.
-
-    return a unary tuple which contains the adhoc chart datum correction
-    for a grid point.
-    """
-
-    #methId= str(__name__)+"."+ str(inspect.stack()[0][3]) + " method:"
-
-    #--- No fool-proof checks her for performance reasons:
-    #    Assuming that WLZAmplitudeStrId string identificators
-    #    are present in the dictionary keys of PointDataDict
-
-    rgx= re.compile(".*"+WLZAmplitudeStrId[0])
-    wlzDataIdsTuple= tuple( filter(rgx.match, PointDataDict.keys()) )
-
-    wlzAmpsAcc= 0.0
-
-    for wlzAmpId in wlzDataIdsTuple :
-
-      wlzAmpsAcc += float(PointDataDict[wlzAmpId])
-
-    #--- NOTE: PointDataDict[ IS104.CHART_DATUM_CONV_ID[0] ] is an unary tuple.
-    #PointDataDict[ IS104.CHART_DATUM_CONV_ID[0] ]= ( CDCorrFactor[0] * wlzAmpsAcc ,)
-
-    return ( CDCorrFactor[0] * wlzAmpsAcc ,)
-
-  #---
-  def getTilePredictions(self, TidalPrdFactoryObj, TileDict, DateTimeStampsDict) :
-
-    """
-    Generic (a.k.a. "abstract") method for computing tidal predictions with tiled data
-    to be implemented by sub-classes.
+    Generic (a.k.a. "abstract") method for computing
+    tidal predictions with tiled data to be implemented
+    by sub-classes.
 
     TODO: Add arguments definitions.
     """
@@ -119,12 +78,14 @@ class prediction(time_machine) :
     pass 
 
   #---
-  def validateTidalMethod(self, TidalMethod2Validate) :
+  def validateTidalMethod( self,
+                           TidalMethod2Validate) -> bool :
 
     """
     Instance method validateTidalMethod.
 
-    TidalMethod2Validate : A tidal prediction method Id. to validate.
+    TidalMethod2Validate (str or enum ??) : A tidal prediction
+    method Id. to validate.
     """
 
     methId= str(__name__)+"."+ str(inspect.stack()[0][3]) + " method:"
@@ -134,12 +95,13 @@ class prediction(time_machine) :
 
     found= False
 
-    for methodAllowed in _ALLOWED_METHODS:
+    for methodAllowed in self.ALLOWED_METHODS:
 
       if TidalMethod2Validate == methodAllowed : found= True
 
     if not found :
-      sys.stdout.write("WARNING "+methId+" Invalid tidal method -> "+Method2Validate+" !\n")
+      sys.stdout.write("WARNING "+methId+
+                       " Invalid tidal method -> "+Method2Validate+" !\n")
 
     return found
 

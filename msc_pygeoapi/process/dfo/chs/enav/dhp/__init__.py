@@ -40,7 +40,7 @@ from msc_pygeoapi.process.dfo.chs.enav.dhp.validations import (
 )
 
 from msc_pygeoapi.process.dfo.chs.enav.dhp.cfg import (
-    DHP_SNNN_SOURCES,
+    DHP_TYPES_SOURCES,
     PROCESS_METADATA
 )
 

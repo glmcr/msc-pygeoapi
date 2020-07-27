@@ -3,11 +3,11 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : dfo msc-pygeoapi process plugins.
-# File/Fichier    : dfo/util/indexing.py
-# Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
+# Project/Projet  : ENAV-DHP
+# File/Fichier    : dhp/util/Py2And3.py
+# Creation        : April/Avril 2019 - G. Mercier - DFO-MPO/CHS-SHC
 #
-# Description: -
+# Description: - Class dhp.util.Py2And3 implementation.
 #
 # Remarks :
 #
@@ -30,31 +30,39 @@
 #
 #==============================================================================
 
-#---
-import enum
-
-#--- U current component string id.
-_UUC_ID= ( str("U") ,)
-
-#--- V current component string id.
-_VVC_ID= ( str("V") ,)
-
-#--- Doc Z water level string id.
-_ZWL_ID= ( str("Z") ,)
-
-#--- Regroup the U,V,Z string ids. in an Enum object
-#    for convenience.
-_UVZ_IDS= enum.Enum( str("_UVZ_IDS"), [ _UUC_ID[0], _VVC_ID[0], _ZWL_ID[0]])
+#--- Do not allow relative imports.
+from __future__ import absolute_import
 
 #---
-_DICT_KEYS_SEP= ( str(",") ,)
+import os
+import sys
+import inspect
 
-_LON_ID= ( str("Lon") ,)
-_LAT_ID= ( str("Lat") ,)
+#---
+class Py2And3(object) :
 
-_POINTS_DATAIN_ID= ( str("PTS_DIN") ,)
-_POINTS_DATAOUT_ID= ( str("PTS_DOUT") ,)
+  """
+  Handle cases where we need to have the same behavior with Python2 and Python3.
+  """
 
-#--- Seems odd but it's handy for dictionary indexing:
-_NAME_ID= ( str("WhoAmI") ,)
+  #---
+  def __init__(object) :
+    pass
+
+  #---
+  @staticmethod
+  def getASCIIStr(AStr) :
+
+   """
+   Get rid of the annoying leading 'b' character prefix if running under Python3.
+   """
+
+   ret= str(AStr)
+
+   #: Doc Trick to identify Python3 with sys.hexversion found on stackoverflow again!:
+   if sys.hexversion >= 0x3000000 :
+     ret= str(AStr,"utf-8")
+
+   return ret
+
 

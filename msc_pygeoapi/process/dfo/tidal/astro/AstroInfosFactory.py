@@ -3,11 +3,11 @@
 # DFO-MPO/CHS-SHC
 # Institut Maurice Lamontagne Institute
 #
-# Project/Projet  : dfo msc-pygeoapi process plugins
-# File/Fichier    : dfo/tidal/astro/astro_infos.py
-# Creation        : July/Juillet 2020 - G. Mercier - DFO-MPO/CHS-SHC
+# Project/Projet  : ENAV-DHP
+# File/Fichier    : dhp/tidalprd/astro/AstroInfosFactory.py
+# Creation        : July/Juillet 2018 - G. Mercier - DFO-MPO/CHS-SHC
 #
-# Description: - Class dfo.tidal.astro.astro_infos implementation.
+# Description: - Class dhp.tidalprd.astro.AstroInfosFactory implementation.
 #
 # Remarks :
 #
@@ -30,8 +30,6 @@
 #
 #==============================================================================
 
-#--- This was the AstroInfosFactory.py src file in the original code base.
-
 #--- Do not allow relative imports.
 from __future__ import absolute_import
 
@@ -42,37 +40,31 @@ import time
 import inspect
 
 #----
-from msc_pygeoapi.process.dfo.tidal.prediction import prediction
-from msc_pygeoapi.process.dfo.util.time_machine import time_machine
+from dhp.util.TimeMachine import TimeMachine
+from dhp.tidalprd.TidalPrd import TidalPrd
+from dhp.tidalprd.ITidalPrd import ITidalPrd
 
 #---
-class astro_infos(time_machine) :
+class AstroInfosFactory(ITidalPrd, TimeMachine) :
 
   """
   Generic class for astronomic informations. The only tidal prediction method used
-  for now(2018-11-20) is M. Foreman's method but we can think that other methods
-  (like XTide) could eventually be used in the future.
+  for now(2018-11-20) is the method of M. Foreman's but we can think that other methods
+  could eventually be used in the future.
   """
 
   #---
-  def __init__( self,
-                SecondsSinceEpochStart: int,
-                SecondsSinceEpochEnd:   int,
-                TimeIncrSeconds:        int= None) :
+  def __init__(self, SecondsSinceEpochStart,
+               SecondsSinceEpochEnd, TimeIncrSeconds= None) :
+
     """
-    SecondsSinceEpochStart : Seconds since the epoch which will be
-    the initial time-stamp of the time reference of the astronomic
-    informations.
-
-    SecondsSinceEpochEnd   : Seconds since the epoch which will be
-    the final time-stamp of the time reference of the astronomic informations.
-
-    TimeIncrSeconds        : Time increment interval in seconds between
-    successive prediction data.
+    SecondsSinceEpochStart : Seconds since the epoch which will be the initial time-stamp of the time reference of the astronomic informations.
+    SecondsSinceEpochEnd   : Seconds since the epoch which will be the final time-stamp of the time reference of the astronomic informations.
+    TimeIncrSeconds        : Time increment interval in seconds between successive prediction data.
     """
 
-    #ITidalPrd.__init__(self)
-    time_machine.__init__(self)
+    ITidalPrd.__init__(self)
+    TimeMachine.__init__(self)
 
     methID= str(__name__)+"."+ str(inspect.stack()[0][3]) + " method:"
 
@@ -93,14 +85,13 @@ class astro_infos(time_machine) :
          SecondsSinceEpochStart == 0 or SecondsSinceEpochStart < 0 :
 
       sys.exit("ERROR "+methID+
-               " Invalid SecondsSinceEpochStart -> "+
-               str(SecondsSinceEpochStart) + " !\n")
+               " Invalid SecondsSinceEpochStart -> "+ str(SecondsSinceEpochStart) + " !\n")
     #---
 
     self._secondsSinceEpochStart= SecondsSinceEpochStart
 
     if SecondsSinceEpochEnd is None or \
-       SecondsSinceEpochEnd <= self._secondsSinceEpochStart :
+         SecondsSinceEpochEnd <= self._secondsSinceEpochStart :
 
       sys.exit("ERROR "+methID+" Invalid SecondsSinceEpochEnd -> "+
                str(SecondsSinceEpochEnd) + " <= self._secondsSinceEpochStart !\n")
@@ -111,24 +102,22 @@ class astro_infos(time_machine) :
 
     #--- Default time increment between successive tidal predictions data.
     #    (a.k.a. we can call it "time nodes")
-    self._timeIncrSeconds= _DEFAULT_TIMEINCR_SECONDS[0]
+    self._timeIncrSeconds= ITidalPrd.DEFAULT_TIMEINCR_SECONDS[0]
 
     #--- Use the time increment if defined in the args.:
     if TimeIncrSeconds is not None :
 
       #--- Forget about tidal predictions with time increment > self.SECONDS_PER_HOUR
-      if TimeIncrSeconds > _SECONDS_PER_HOUR[0] :
+      if TimeIncrSeconds > self.SECONDS_PER_HOUR[0] :
 
-        sys.exit("ERROR "+methID+
-                 " TimeIncrSeconds -> "+str(TimeIncrSeconds)+
-                 " > _SECONDS_PER_HOUR[0] ! TimeIncrSeconds must be <= _SECONDS_PER_HOUR[0] !\n")
+        sys.exit("ERROR "+methID+" TimeIncrSeconds -> "+str(TimeIncrSeconds)+
+                 " > self.SECONDS_PER_HOUR[0] ! TimeIncrSeconds must be <=  self.SECONDS_PER_HOUR[0] !\n")
       #---
 
       self._timeIncrSeconds= TimeIncrSeconds
 
-    sys.stdout.write("INFO "+methID+
-                     " Will use -> "+str( self._timeIncrSeconds)+
-                     " seconds for time increment between prediction data\n")
+    sys.stdout.write("INFO "+methID+" Will use -> "+
+                     str( self._timeIncrSeconds)+" seconds for time increment between prediction data\n")
 
     #--- self.sse to keep track of where we are in time.
     self._sse= self._secondsSinceEpochStart
@@ -140,10 +129,7 @@ class astro_infos(time_machine) :
     Just for starting from scratch for date-time attributes of self.
     """
 
-    self._sse= \
-        self._timeIncrSeconds= \
-            self._secondsSinceEpochStart= \
-                self._secondsSinceEpochEnd= None
+    self._secondsSinceEpochStart= self._secondsSinceEpochEnd= self._timeIncrSeconds= self.sse= None
 
   ##--- Keep for possible future usage.
   ##---

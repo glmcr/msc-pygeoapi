@@ -28,9 +28,13 @@
 #
 # =================================================================
 
-DHP_SNNN_SOURCES = {
-                     'S111_WebTide': get_webtide,
-                     'S104_WebTide': get_webtide
+#--- import class webtide.WebTide
+from msc_pygeoapi.process.dfo.chs.enav.dhp.webtide import WebTide
+
+#--- Prepare the objects instances(as dictionary items) for the DHP conversions:
+DHP_TYPES_SOURCES = {
+                     'S111_WebTide': WebTide(),
+                     'S104_WebTide': WebTide()
                      #'S104_IWLS': 'get_iwls',
                      # 'S111_RIOPS' : 'get_riops'
                    }
