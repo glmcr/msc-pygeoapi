@@ -34,7 +34,7 @@ from collections import namedtuple
 
 LOGGER = logging.getLogger(__name__)
 
-def snnn_chk_bbox(llbbox: namedtuple):
+def bbox_check(llbbox: namedtuple):
 
     """
     Validate a regular EPSG:4236 lat-lon bounding box.

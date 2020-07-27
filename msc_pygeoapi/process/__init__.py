@@ -30,8 +30,10 @@
 
 import click
 
-# from msc_pygeoapi.process.cccs import cccs
-from msc_pygeoapi.process.dfo.chs.enav.dhp import dhp
+
+#--- gdal(needed by cccs process) not available on my local machine
+#from msc_pygeoapi.process.cccs import cccs
+from msc_pygeoapi.process.dfo import dfo
 
 
 @click.group()
@@ -39,5 +41,6 @@ def process():
     pass
 
 
-# process.add_command(cccs)
-process.add_command(dhp)
+#process.add_command(cccs)
+process.add_command(dfo)
+

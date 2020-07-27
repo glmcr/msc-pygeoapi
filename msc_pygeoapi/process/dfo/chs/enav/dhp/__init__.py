@@ -28,22 +28,117 @@
 #
 # =================================================================
 
+# import os
+# import json
 import click
+import logging
 
-# We are in msc_pygeoapi.process.dfo.chs.enav.dhp module
-# then we can use a relative import.
-# from .snnn_get import snnn_get_execute
+from collections import namedtuple
 
-# This is more explicit.
-from msc_pygeoapi.process.dfo.chs.enav.dhp.snnn_get import (
-    snnn_get_execute
+from msc_pygeoapi.process.dfo.chs.enav.dhp.validations import (
+    bbox_check
 )
 
+from msc_pygeoapi.process.dfo.chs.enav.dhp.cfg import (
+    DHP_SNNN_SOURCES,
+    # PROCESS_METADATA
+)
 
-@click.group()
-def dhp():
+LOGGER = logging.getLogger(__name__)
+
+
+#---
+def get_it(type_source: str,
+           bbox_swc_lat: float,
+           bbox_swc_lon: float,
+           bbox_nec_lat: float,
+           bbox_nec_lon: float):
+
+    """
+    Entry function for getting DHP S-NNN data
+
+    :param type_source: String name id. of the SNNN
+                        (ex. S111) type and its source
+                        data(ex. RIOPS)
+    :param bbox_swc_lat: Bounding Box SW corner latitude(EPSG:4326)
+    :param bbox_swc_lon: Bounding Box SW corner longitude(EPSG:4326)
+    :param bbox_nec_lat: Bounding Box NE corner latitude(EPSG:4326)
+    :param bbox_nec_lon: Bounding Box NE corner longitude(EPSG:4326)
+    """
+
+    dhp_zip= None
+
+    # LOGGER.debug('sfmt_get start')
+
+    # Check if the snnn_source combo exists.
+    try:
+        get_func = DHP_SNNN_SOURCES[type_source]
+
+    except IndexError as err:
+
+        msg = 'invalid snnn_source value: {}'.format(err)
+        LOGGER.exception(msg)
+
+    # click.echo("snnn_get_func="+snnn_get_func)
+
+    # LOGGER.debug('sfmt_get end')
+
+    # Use a named tuple that contains the regular bounding box coordinates:
+    llbbox = namedtuple(
+        'llbbox', ('swc_lat swc_lon nec_lat nec_lon')
+    )(bbox_swc_lat, bbox_swc_lon, bbox_nec_lat, bbox_nec_lon)
+
+    bbox_check(llbbox)
+
+    return dhp_zip
+
+@click.group('execute')
+def chs_enav_dhp():
     pass
+#def snnn_get_execute():
+#    pass
 
 
-# NOTE: dhp is a msc_pygeoapi.process object.
-dhp.add_command(snnn_get_execute)
+@click.command('chs-enav-dhp')
+@click.pass_context
+@click.option('--type_source',
+              help='type_source (ex. S104_IWLS, type->S104 source->IWLS)',
+              required=True)
+@click.option('--bbox_swc_lat',
+              help='Bounding Box SW corner latitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_swc_lon',
+              help='Bounding Box SW corner longitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_nec_lat',
+              help='Bounding Box NE corner latitude(EPSG:4326)',
+              required=True)
+@click.option('--bbox_nec_lon',
+              help='Bounding Box NE corner longitude(EPSG:4326)',
+              required=True)
+def dhp_get_cli(objectNotUsedForNow,
+                type_source,
+                bbox_swc_lat,
+                bbox_swc_lon,
+                bbox_nec_lat,
+                bbox_nec_lon):
+
+    output = get_it(type_source,
+                    float(bbox_swc_lat),
+                    float(bbox_swc_lon),
+                    float(bbox_nec_lat),
+                    float(bbox_nec_lon))
+
+    # LOGGER.debug('output='+str(output))
+
+    click.echo(str(output))
+
+    # if format_ == 'GeoJSON':
+    #    click.echo(json.dumps(output, ensure_ascii=False))
+    # elif format_ == 'CSV':
+    #    click.echo(output.getvalue())
+
+
+#---
+chs_enav_dhp.add_command(dhp_get_cli)
+#snnn_get_execute.add_command(snnn_get_cli)

@@ -141,7 +141,7 @@ class astro_infos(time_machine) :
     """
 
     self._sse= \
-        self._timeIncrSeconds=
+        self._timeIncrSeconds= \
             self._secondsSinceEpochStart= \
                 self._secondsSinceEpochEnd= None
 

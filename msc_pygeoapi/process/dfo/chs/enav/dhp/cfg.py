@@ -36,7 +36,7 @@ DHP_SNNN_SOURCES = {
 PROCESS_METADATA = {
 
     'version': '0.1.0',
-    'id': 'snnn-get',
+    'id': 'chs-enav-dhp',
     'title': 'on-demand DFO-CHS-ENAV-DHP data generation process',
     'description': 'on-demand DFO-CHS-ENAV-DHP data generation process',
     'keywords': ['on-demand DFO-CHS-ENAV-DHP'],
@@ -54,8 +54,8 @@ PROCESS_METADATA = {
         'hreflang': 'fr-CA'
     }],
     'inputs': [{
-        'id': 'snnn_source',
-        'title': 's<nnn>_<source> dhp data id.',
+        'id': 'type_source',
+        'title': '<snnn type(ex. S111)>_<input data source(ex. ECCC-RIOPS)> dhp data id.',
         'input': {
             'literalDataDomain': {
                 'dataType': 'string',
@@ -120,7 +120,7 @@ PROCESS_METADATA = {
         'maxOccurs': 1
     }],
     'outputs': [{
-        'id': 'sfmt-get-response',
+        'id': 'dhp-get-response',
         'title': 'output sfmt get',
         'output': {
             'formats': [{
