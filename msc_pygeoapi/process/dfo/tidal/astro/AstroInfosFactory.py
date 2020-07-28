@@ -40,9 +40,9 @@ import time
 import inspect
 
 #----
-from dhp.util.TimeMachine import TimeMachine
-from dhp.tidalprd.TidalPrd import TidalPrd
-from dhp.tidalprd.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.tidal.TidalPrd import TidalPrd
+from msc_pygeoapi.process.dfo.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.util.TimeMachine import TimeMachine
 
 #---
 class AstroInfosFactory(ITidalPrd, TimeMachine) :

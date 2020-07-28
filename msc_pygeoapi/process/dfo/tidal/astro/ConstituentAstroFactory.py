@@ -34,8 +34,8 @@
 from __future__ import absolute_import
 
 #---
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.tidalprd.astro.AstroInfosFactory import AstroInfosFactory
+from msc_pygeoapi.process.dfo.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.tidal.astro.AstroInfosFactory import AstroInfosFactory
 
 #---
 class ConstituentAstroFactory(ITidalPrd) :

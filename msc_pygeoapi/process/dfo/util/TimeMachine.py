@@ -40,7 +40,7 @@ import inspect
 import calendar
 
 #---
-from dhp.util.ITimeMachine import ITimeMachine
+from msc_pygeoapi.process.dfo.util.ITimeMachine import ITimeMachine
 
 #---
 class TimeMachine(ITimeMachine) :

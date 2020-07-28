@@ -37,7 +37,7 @@ from __future__ import absolute_import
 import numpy
 
 #---
-from dhp.util.IDataIndexing import IDataIndexing
+from msc_pygeoapi.process.dfo.util.IDataIndexing import IDataIndexing
 
 #---
 class DataIndexing(IDataIndexing) :
@@ -86,4 +86,3 @@ class DataIndexing(IDataIndexing) :
       print("retData[1].shape="+str(retData[1].shape))
 
     return retData
-

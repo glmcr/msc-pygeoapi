@@ -41,7 +41,7 @@ import inspect
 from collections import MutableMapping
 
 #---
-from dhp.util.IDataIndexing import IDataIndexing
+from msc_pygeoapi.process.dfo.util.IDataIndexing import IDataIndexing
 
 #---
 class JsonCfgIO(IDataIndexing) :
