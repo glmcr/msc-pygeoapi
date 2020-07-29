@@ -32,12 +32,13 @@
 from msc_pygeoapi.process.dfo.chs.enav.dhp.webtide import WebTide
 
 #--- Prepare the objects instances(as dictionary items) for the DHP conversions:
-DHP_TYPES_SOURCES = {
-                     'S111_WebTide': WebTide(),
-                     'S104_WebTide': WebTide()
-                     #'S104_IWLS': 'get_iwls',
-                     # 'S111_RIOPS' : 'get_riops'
-                   }
+TYPES_SOURCES_OBJECTS = {
+
+    'S111_WebTide': WebTide,
+    'S104_WebTide': WebTide
+    #'S104_IWLS': 'get_iwls',
+    # 'S111_RIOPS' : 'get_riops'
+}
 
 PROCESS_METADATA = {
 

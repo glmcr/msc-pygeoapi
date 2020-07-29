@@ -14,7 +14,10 @@ class WebTide(object) :
         pass
 
     #---
-    def get(args_tuple: tuple) :
+    def get_products( self,
+                      dhp_snnn: str,
+                      args_tuple: tuple ) -> object :
 
-        print("webtide.get: method not implemented yet !")
-        sys.exit(1)
+        #print("webtide.get: method not implemented yet !")
+        #sys.exit(1)
+        return (dhp_snnn,args_tuple)

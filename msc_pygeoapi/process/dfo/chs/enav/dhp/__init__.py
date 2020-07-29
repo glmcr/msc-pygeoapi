@@ -40,7 +40,7 @@ from msc_pygeoapi.process.dfo.chs.enav.dhp.validations import (
 )
 
 from msc_pygeoapi.process.dfo.chs.enav.dhp.cfg import (
-    DHP_TYPES_SOURCES,
+    TYPES_SOURCES_OBJECTS,
     PROCESS_METADATA
 )
 
@@ -66,31 +66,39 @@ def dhp_get(type_source: str,
     :param bbox_nec_lon: Bounding Box NE corner longitude(EPSG:4326)
     """
 
-    dhp_zip= None
+    #dhp_zip= None
 
     # LOGGER.debug('sfmt_get start')
 
-    # Check if the snnn_source combo exists.
+    #--- Check if the DHP type_source combo key exists
+    #    in the TYPES_SOURCES_OBJECTS dictionary:
     try:
-        get_func = DHP_SNNN_SOURCES[type_source]
+        type_source_object = TYPES_SOURCES_OBJECTS[type_source]
 
     except IndexError as err:
 
-        msg = 'invalid snnn_source value: {}'.format(err)
+        msg = 'invalid type_source combo string id.: {}'.format(err)
         LOGGER.exception(msg)
 
     # click.echo("snnn_get_func="+snnn_get_func)
 
     # LOGGER.debug('sfmt_get end')
 
-    # Use a named tuple that contains the regular bounding box coordinates:
+    #--- Use a named tuple that contains the regular bounding box coordinates:
     llbbox = namedtuple(
         'llbbox', ('swc_lat swc_lon nec_lat nec_lon')
     )(bbox_swc_lat, bbox_swc_lon, bbox_nec_lat, bbox_nec_lon)
 
+    #--- Fool-proof check for the bounding box:
     bbox_check(llbbox)
 
-    return dhp_zip
+    #--- Extract the DHP S*** type from the
+    #    type_source combo string id.
+    dhp_snnn= type_source.split("_")[0]
+
+    #--- Create DHP provider object instance and directly
+    #    return its products to the caller.
+    return type_source_object().get_products(dhp_snnn,llbbox)
 
 #---
 @click.group('execute')
