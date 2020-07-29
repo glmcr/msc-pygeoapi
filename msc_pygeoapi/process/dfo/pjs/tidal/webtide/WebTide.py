@@ -37,20 +37,20 @@ import math
 import inspect
 
 #---
-from dhp.geo.Geo import Geo
-from dhp.sfmt.ISFMT import ISFMT
-from dhp.sfmt.s102.IS102 import IS102
-from dhp.sfmt.s104.IS104 import IS104
-from dhp.util.Vector2D import Vector2D
-from dhp.tidalprd.TidalPrd import TidalPrd
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.util.Trigonometry import Trigonometry
-from dhp.tidalprd.webtide.GeoJSON import GeoJSON
-from dhp.tidalprd.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.geo.Geo import Geo
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.ISFMT import ISFMT
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.IS102 import IS102
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s104.IS104 import IS104
+from msc_pygeoapi.process.dfo.pjs.util.Trigonometry import Trigonometry
+from msc_pygeoapi.process.dfo.chs.enav.pjs.util.Vector2D import Vector2D
+from msc_pygeoapi.process.dfo.chs.enav.pjs.tidal.TidalPrd import TidalPrd
+from msc_pygeoapi.process.dfo.chs.enav.pjs.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.pjs.util.tidal.webtide.GeoJSON import GeoJSON
+from msc_pygeoapi.process.dfo.pjs.util.tidal.webtide.IWebTide import IWebTide
 
 #--- WebTide tidal predictions calculations are normally
 #    (as of 20191031) done using M. Foreman's method
-from dhp.tidalprd.astro.foreman.IForeman import IForeman
+from msc_pygeoapi.process.dfo.pjs.tidal.astro.foreman.IForeman import IForeman
 
 #---
 class WebTide(IWebTide, TidalPrd, Geo) :

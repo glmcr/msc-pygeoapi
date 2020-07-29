@@ -40,13 +40,13 @@ import math
 import inspect
 
 #---
-from dhp.sfmt.s102.IS102 import IS102
-from dhp.sfmt.s104.IS104 import IS104
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.tidalprd.webtide.IWebTide import IWebTide
-from dhp.tidalprd.webtide.IGeoJSON import IGeoJSON
-from dhp.sfmt.s102.S102DataUtil import S102DataUtil
-from dhp.sfmt.SFMTModelFactory import SFMTModelFactory
+from msc_pygeoapi.process.dfo.pjs.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.IS102 import IS102
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s104.IS104 import IS104
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.IGeoJSON import IGeoJSON
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.S102DataUtil import S102DataUtil
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.SFMTModelFactory import SFMTModelFactory
 
 #---
 class WebTideTiles(IWebTide) :

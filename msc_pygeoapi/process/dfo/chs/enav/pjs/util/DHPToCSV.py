@@ -149,12 +149,7 @@ class DHPToCSV(ISFMT) :
                          " Processing S111 product input file -> "+
                          iFilePath+"\n")
 
-        #: Doc Apply the specific SFMT data coding conversion to CSV method.
-        self.__csvConvMethodsDict[DataCodingFmt.name] ( iFilePath,
-                                                        s111MetaDataTuple,
-                                                        CSVOutputDirectory )
-
-        #self.DataCodingFmt3ToCSV(iFilePath, s111MetaDataTuple, CSVOutputDirectory)
+        sfmtMetaDataTuple= s111MetaDataTuple
 
       #--- end inner if block.
 
@@ -164,16 +159,19 @@ class DHPToCSV(ISFMT) :
                          " Processing S104 product input file -> "+
                          iFilePath+"\n")
 
-        #: Doc Only data coding format 3 allowed for now:
-        self.__csvConvMethodsDict[DataCodingFmt.name] ( iFilePath,
-                                                        s104MetaDataTuple,
-                                                        CSVOutputDirectory )
+        sfmtMetaDataTuple= s104MetaDataTuple
 
       else :
 
         #: Doc Skip other files which does not have the official file prefix string
         continue
 
+      #--- Apply the conversion to CSV format according to the
+      #    specific sfmtMetaDataTuple
+
+      self.__csvConvMethodsDict[DataCodingFmt.name] ( iFilePath,
+                                                      sfmtMetaDataTuple,
+                                                      CSVOutputDirectory )
       #--- end if-elif-else block.
     #--- end loop on SFMT DHP data files.
 

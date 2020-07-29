@@ -40,17 +40,17 @@ import inspect
 import multiprocessing
 
 #---
-from dhp.sfmt.ISFMT import ISFMT
-from dhp.sfmt.s102.IS102 import IS102
-from dhp.util.FilesDirs import FilesDirs
-from dhp.util.JsonCfgIO import JsonCfgIO
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.tidalprd.webtide.WebTide import WebTide
-from dhp.tidalprd.webtide.IWebTide import IWebTide
-from dhp.models.ModelDataAttr import ModelDataAttr
-from dhp.tidalprd.astro.foreman.IForeman import IForeman
-from dhp.tidalprd.webtide.WebTideOutput import WebTideOutput
-from dhp.tidalprd.astro.foreman.ForemanFactory import ForemanFactory
+from msc_pygeoapi.process.dfo.pjs.util.JsonCfgIO import JsonCfgIO
+from msc_pygeoapi.process.dfo.pjs.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.ISFMT import ISFMT
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.WebTide import WebTide
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.IS102 import IS102
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.chs.enav.pjs.util.FilesDirs import FilesDirs
+from msc_pygeoapi.process.dfo.pjs.tidal.astro.foreman.IForeman import IForeman
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.WebTideOutput import WebTideOutput
+from msc_pygeoapi.process.dfo.chs.enav.pjs.models.ModelDataAttr import ModelDataAttr
+from msc_pygeoapi.process.dfo.pjs.tidal.astro.foreman.ForemanFactory import ForemanFactory
 
 #--- No land-waters masks used for now but we plan
 #    to possibly use some(espacially near the ports) in the future.

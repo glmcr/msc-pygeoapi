@@ -39,11 +39,11 @@ import os
 import sys
 
 #---
-from dhp.geo.IGeo import IGeo
-from dhp.util.Trigonometry import Trigonometry
-from dhp.util.IDataIndexing import IDataIndexing
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.tidalprd.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.geo.IGeo import IGeo
+from msc_pygeoapi.process.dfo.pjs.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.pjs.util.Trigonometry import Trigonometry
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.util.IDataIndexing import IDataIndexing
 
 #---
 class IGeoJSON(IGeo, IWebTide, Trigonometry) :

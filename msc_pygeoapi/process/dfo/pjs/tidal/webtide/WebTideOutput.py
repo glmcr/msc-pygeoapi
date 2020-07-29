@@ -40,18 +40,16 @@ import inspect
 import multiprocessing
 
 #---
-from dhp.sfmt.ISFMT import ISFMT
-#from dhp.sfmt.SFMTObj import SFMTObj
-#from dhp.sfmt.SFMTFactory import SFMTFactory
-from dhp.tidalprd.TidalPrd import TidalPrd
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.tidalprd.webtide.WebTide import WebTide
-from dhp.tidalprd.webtide.IWebTide import IWebTide
-from dhp.sfmt.SFMTModelFactory import SFMTModelFactory
-from dhp.util.MultiProcFactory import MultiProcFactory
-from dhp.sfmt.s111.S111DataCodingFmt3 import S111DataCodingFmt3
-from dhp.sfmt.s104.S104DataCodingFmt3 import S104DataCodingFmt3
-from dhp.tidalprd.webtide.WebTideTiles import WebTideTiles
+from msc_pygeoapi.process.dfo.pjs.tidal.TidalPrd import TidalPrd
+from msc_pygeoapi.process.dfo.pjs.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.ISFMT import ISFMT
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.WebTide import WebTide
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.util.MultiProcFactory import MultiProcFactory
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.WebTideTiles import WebTideTiles
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.SFMTModelFactory import SFMTModelFactory
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s111.S111DataCodingFmt3 import S111DataCodingFmt3
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s104.S104DataCodingFmt3 import S104DataCodingFmt3
 
 #---
 class WebTideOutput(SFMTModelFactory, WebTideTiles) :

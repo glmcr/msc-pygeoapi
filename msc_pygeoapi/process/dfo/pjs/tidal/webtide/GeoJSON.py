@@ -39,19 +39,19 @@ import sys
 import math
 import inspect
 
-#---
-from dhp.sfmt.ISFMT import ISFMT
-from dhp.sfmt.s102.IS102 import IS102
-from dhp.sfmt.s104.IS104 import IS104
-from dhp.util.JsonCfgIO import JsonCfgIO
-from dhp.tidalprd.TidalPrd import TidalPrd
-from dhp.tidalprd.ITidalPrd import ITidalPrd
-from dhp.util.Trigonometry import Trigonometry
-from dhp.util.IDataIndexing import IDataIndexing
-from dhp.tidalprd.webtide.IGeoJSON import IGeoJSON
-from dhp.tidalprd.webtide.IWebTide import IWebTide
-from dhp.sfmt.s102.S102DataUtil import S102DataUtil
-from dhp.tidalprd.webtide.WebTideTiles import WebTideTiles
+#--- TODO: Put code related to DHP stuff in a sfmt.webtide.GeoJSON derived class.
+from msc_pygeoapi.process.dfo.pjs.util.JsonCfgIO import JsonCfgIO
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.ISFMT import ISFMT
+from msc_pygeoapi.process.dfo.pjs.util.tidal.TidalPrd import TidalPrd
+from msc_pygeoapi.process.dfo.pjs.util.tidal.ITidalPrd import ITidalPrd
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.IS102 import IS102
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s104.IS104 import IS104
+from msc_pygeoapi.process.dfo.pjs.util.util.Trigonometry import Trigonometry
+from msc_pygeoapi.process.dfo.pjs.util.tidal.webtide.IGeoJSON import IGeoJSON
+from msc_pygeoapi.process.dfo.pjs.util.tidal.webtide.IWebTide import IWebTide
+from msc_pygeoapi.process.dfo.pjs.util.util.IDataIndexing import IDataIndexing
+from msc_pygeoapi.process.dfo.pjs.tidal.webtide.WebTideTiles import WebTideTiles
+from msc_pygeoapi.process.dfo.chs.enav.pjs.sfmt.s102.S102DataUtil import S102DataUtil
 
 #---
 class GeoJSON(IGeoJSON) :
