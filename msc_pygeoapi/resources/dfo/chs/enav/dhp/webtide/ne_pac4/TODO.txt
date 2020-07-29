@@ -1,0 +1,18 @@
+Put WebTide tiled GeoJSON'ized datasets here.
+
+The idea is to have geo-referenced and pre-tiled tidal 
+constituents datasets as points features.
+
+i.e. The regular tiles can be considered as GeoJSON 
+polygons with points features holding WebTide tidal
+constituents.
+
+One Ln tile -> one GeoJSON file holding data from 
+a WebTIde specific dataset with its tidal 
+constituents grid points features enclosed by
+the tile bounding box.
+
+Need to have L5 for STLE400, L6 for Halifax harbour
+L3 for NW Atl and Arctic datasets but need to do
+experiments for West Coast data for the optimal
+tiles level to use in that case.
