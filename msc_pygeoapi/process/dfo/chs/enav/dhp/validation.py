@@ -38,8 +38,15 @@ def bbox_check(llbbox: namedtuple):
 
     """
     Validate a regular EPSG:4236 lat-lon bounding box.
-    SW corner latitude MUST be smaller than NE corner latitude.
-    SW corner longitude MUST be smaller than NE corner longitude.
+
+    1). It must be in the NW hemisphere(i.e. positive
+    latitudes and negative longitutes.
+
+    2). SW corner latitude MUST be smaller than NE corner
+    latitude.
+
+    3). SW corner longitude MUST be smaller than NE corner
+    longitude.
 
     :param namedtuple: Contains the regular EPSG:4236 lat-lon
                        bounding box attributes.
@@ -82,4 +89,3 @@ def bbox_check(llbbox: namedtuple):
               ' > llbbox.nec_lon={}'.format(llbbox.nec_lon)
         LOGGER.error(msg)
         raise ValueError(msg)
-

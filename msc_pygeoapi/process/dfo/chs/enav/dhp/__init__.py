@@ -35,7 +35,7 @@ import logging
 
 from collections import namedtuple
 
-from msc_pygeoapi.process.dfo.chs.enav.dhp.validations import (
+from msc_pygeoapi.process.dfo.chs.enav.dhp.validation import (
     bbox_check
 )
 
