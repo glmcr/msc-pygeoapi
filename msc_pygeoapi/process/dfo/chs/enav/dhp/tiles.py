@@ -1,5 +1,6 @@
-#--- Algo to get the tiles that are inside or that intersect
-#    a boundinfg box provided by a client request.
+#--- Algo to get the CHS S102 bathymetry tiles that are
+#    inside or that intersect a regukar bounding box
+#    provided by a client asynchronous request.
 #
 #    Using tiles index files(at different levels) in GeoJSON
 #    format.
@@ -18,4 +19,7 @@
 #    NWCTileLat and NECTileLat -> int(ceil(NECLat))
 #    SECTileLon and NECTileLon -> int(ceil(SECLon))
 #
-#    WIP
+#    Iterate on lon,lat limits to extract the L2 bathy
+#    tiles from the geojson index but beware that we
+#    can have locations where tiles are not existing
+#    (ex. on land or outside canadian coastal waters)
