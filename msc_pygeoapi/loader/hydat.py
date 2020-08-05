@@ -659,8 +659,8 @@ def generate_means(session, discharge_var, level_var,
                           float(station_metadata[station_keys.index('LATITUDE')])] # noqa
         # combine dictionaries with dates in common
         d = defaultdict(dict)
-        for l in (discharge_lst, level_lst):
-            for elem in l:
+        for el in (discharge_lst, level_lst):
+            for elem in el:
                 d[elem['DATE']].update(elem)
         comb_list = d.values()
         # add missing discharge/level key to any dicts that were
@@ -690,8 +690,8 @@ def generate_means(session, discharge_var, level_var,
 
         # Insert all monthly means for this station
         d = defaultdict(dict)
-        for l in (discharge_means, level_means):
-            for elem in l:
+        for el in (discharge_means, level_means):
+            for elem in el:
                 d[elem['DATE']].update(elem)
         comb_list = d.values()
         # add missing mean discharge/level key to any dicts that were
@@ -723,7 +723,7 @@ def generate_stations(session, metadata, path, station_table):
     data so it can be inserted into Elasticsearch.
 
     Returns a generator of dictionaries that represent upsert actions
-    into ElasticSearch's bulk API.
+    into Elasticsearch's bulk API.
 
     :param session: SQLAlchemy session object.
     :param metadata: db metadata returned by connect_db.
